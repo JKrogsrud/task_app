@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all_page.css')}}"/>
+    <title>{% block title %}{% endblock %} - The Boardroom</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename = 'assets/Logo.PNG')}}"/>
+        <p>Boardgame Picking Guide</p>
+    </div>
+    <div class="navigation">
+        <!--- h2><a href="/search"---><!---/a><---/h2-->
+        <a href="/search">Search Library</a>
+        <a href="/passport">My Passport</a>
+        <a href="/lfg">Looking for Group</a>
+        <a href="/account">My Account</a>
+    </div>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

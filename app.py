@@ -1,29 +1,29 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, join_room
+import shelve
+from dotenv import load_dotenv, dotenv_values
 
 app = Flask(__name__)
 
-# app.config['SECRET_KEY'] = ???
-# app.config['DEBUG'] = True
-
 socketio = SocketIO(app)
 
-connections = 0
+class Scores:
+    def __init__(self, players: list[str]):
+        self.players = players
+        self.scores = {player:0 for player in self.players}
 
-# @app.route("/test1")
-# def test1():
-#     return render_template('test1.html')
-#
-# @app.route("/test2")
-# def test2():
-#     return render_template('test2.html')
+    def update(self, delta_scores: dict[str:int]):
+        for player, delta_score in delta_scores.items():
+            self.scores[player] += delta_score
+    def get(self) -> dict[str:int]:
+        return self.scores
 
 @app.route("/control")
 def control():
     return render_template('control.html')
 
 @app.route("/display")
-def control():
+def display():
     return render_template('display.html')
 
 # For all connections:
@@ -36,10 +36,24 @@ def handle_connection(connection_type):
     elif connection_type == 'controller':
         join_room('controller')
 
-@socketio.on('message_to_display')
-def message_to_display(message):
-    print('Message to relay to display: ' + message)
-    socketio.emit('relayed_message', (message), to='display')
+        #load players.env - should load pictures and names
+        players = dotenv_values("players.env")
+
+        # create Scores object to store scores
+        # shelve it for later
+        d = shelve.open('scores')
+        scores = Scores(list(players.keys()))
+        d['scores'] = scores
+        d.close()
+
+        # Check if a display is attached, if not open a new display window
+        # if there is a display attached we will have a button to open a new one
+        # TODO Implement display check this
+
+
+# @socketio.on('update scores'):
+# def update_scores(new_scores):
+#     pass
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

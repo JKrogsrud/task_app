@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/all_page.css')}}"/>
-    <title>{% block title %}{% endblock %} - The Boardroom</title>
-    {% endblock %}
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='css/all_page.css')}}"/-->
+    <title>TaskAppster</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/control.js') }}" defer></script>
 </head>
 <body>
     <div class="header">
-        <img src="{{ url_for('static', filename = 'assets/Logo.PNG')}}"/>
-        <p>Boardgame Picking Guide</p>
+        <p>Taskmaster Live Controls</p>
     </div>
-    <div class="navigation">
-        <!--- h2><a href="/search"---><!---/a><---/h2-->
-        <a href="/search">Search Library</a>
-        <a href="/passport">My Passport</a>
-        <a href="/lfg">Looking for Group</a>
-        <a href="/account">My Account</a>
+<!--    <div class="navigation">-->
+<!--        <a href="/scores">Scores</a>-->
+<!--        <a href="/clips">Clips</a>-->
+<!--        <a href="/full_tasks">Full Tasks</a>-->
+<!--    </div>-->
+    <div id="connect_display">
+        <button>Open a display</button>
     </div>
-    <div id="content">{% block content %}{% endblock %}</div>
 </body>
 </html>

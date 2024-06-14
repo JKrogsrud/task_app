@@ -42,13 +42,15 @@ def handle_connection(connection_type):
         # create Scores object to store scores
         # shelve it for later
         d = shelve.open('scores')
-        scores = Scores(list(players.keys()))
-        d['scores'] = scores
+        # check if scores exists already on the shelf
+        if 'scores' in d.keys():
+            pass
+        else:
+            scores = Scores(list(players.keys()))
+            d['scores'] = scores
         d.close()
-
-        # Check if a display is attached, if not open a new display window
-        # if there is a display attached we will have a button to open a new one
-        # TODO Implement display check this
+    else:
+        print('Unknown connection')
 
 
 # @socketio.on('update scores'):

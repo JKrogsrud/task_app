@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_socketio import SocketIO, join_room
 import shelve
 from dotenv import load_dotenv, dotenv_values
@@ -17,6 +17,10 @@ class Scores:
             self.scores[player] += delta_score
     def get(self) -> dict[str:int]:
         return self.scores
+
+@app.route("/")
+def index():
+    return redirect('/control')
 
 @app.route("/control")
 def control():

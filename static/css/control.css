@@ -5,5 +5,26 @@ body{
 }
 
 .navbar{
+	margin:10px;
+	padding:0px;
+	float:left;
+	width:99%;
+	border:2px solid #42432d;
+	border-width:2px 2px;
 
+	font:
+}
+
+.navbar li {
+	display:inline; /* turns my list horizontal */
+	padding:10px;
+	margin:10px;
+}
+
+.navbar a {
+	color:#000;
+	background:#8c8c8c;
+	padding:20px 20px 10px 10px;
+	float:center; /* where the bar appears on screen */
+	width:auto;
 }

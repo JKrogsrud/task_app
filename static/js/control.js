@@ -10,7 +10,7 @@ function goto_scores() {
 };
 
 function goto_fulltasks() {
-    console.log("Go To Fulltasks");
+    console.log("Go to fulltasks");
     socket.emit('goto_fulltasks');
 };
 

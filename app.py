@@ -56,10 +56,22 @@ def handle_connection(connection_type):
     else:
         print('Unknown connection')
 
+# Control commands
 
-# @socketio.on('update scores'):
-# def update_scores(new_scores):
-#     pass
+@socketio.on('goto_scores')
+def goto_scores():
+    print('opening score view')
+    # render_template(controls, data={state='score view'})
+
+@socketio.on('goto_fulltasks')
+def goto_fulltasks():
+    print('opening full task view')
+    # render_template(controls, data={state='score view'})
+
+@socketio.on('goto_clips')
+def goto_scores():
+    print('opening clip view')
+    # render_template(controls, data={state='score view'})
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

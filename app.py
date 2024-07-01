@@ -61,17 +61,19 @@ def handle_connection(connection_type):
 @socketio.on('goto_scores')
 def goto_scores():
     print('opening score view')
-    # render_template(controls, data={state='score view'})
+    # Not working here, maybe we just do this front end only
+    # by hiding the scores view and unhiding it when the button
+    # is clicked
 
 @socketio.on('goto_fulltasks')
 def goto_fulltasks():
     print('opening full task view')
-    # render_template(controls, data={state='score view'})
+    # render_template(controls, data={state='fulltask view'})
 
 @socketio.on('goto_clips')
 def goto_scores():
     print('opening clip view')
-    # render_template(controls, data={state='score view'})
+    # render_template(controls, data={state='clip view'})
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

@@ -19,18 +19,18 @@
     <nav class="navbar">
         <ul class="navbar_menu">
             <li class="navbar_item">
-                <span><a href="javascript:goto_scores();">Scores</a></span>
+                <span><a href="javascript:toggle_view('scores');">Scores</a></span>
             </li>
             <li class="navbar_item">
-                <span><a href="javascript:goto_fulltasks();">Full Tasks</a></span>
+                <span><a href="javascript:toggle_view('fulltasks');">Full Tasks</a></span>
             </li>
             <li class="navbar_item">
-                <span><a href="javascript:goto_clips();">Clips</a></span>
+                <span><a href="javascript:toggle_view('clips');">Clips</a></span>
             </li>
         </ul>
     </nav>
     <div hidden id="scores">
-        <h1>HELLO</h1>
+        <h1>SCORES</h1>
         <span class="player_scores">
             <!-- div player -->
                 <!-- image -->
@@ -46,6 +46,12 @@
                 <button>Send</button>
             </div>
         </div>
+    </div>
+    <div hidden id="full_tasks">
+        <h1>FULLTASKS</h1>
+    </div>
+    <div hidden id="clips">
+        <h1>CLIPS</h1>
     </div>
 </body>
 </html>

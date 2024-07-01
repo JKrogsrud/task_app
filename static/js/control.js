@@ -4,24 +4,28 @@ socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });
 
-function goto_scores() {
-    console.log("Go to scores");
-    create_scores();
-    socket.emit('goto_scores');
-};
+function toggle_view(toggle_to) {
+    console.log("Changing View: " + toggle_to);
 
-function goto_fulltasks() {
-    console.log("Go to fulltasks");
-    socket.emit('goto_fulltasks');
-};
+    var scores_div = document.getElementById('scores');
+    var fulltasks_div = document.getElementById('full_tasks');
+    var clips_div = document.getElementById('clips');
 
-function goto_clips() {
-    console.log("Go to clips");
-    socket.emit('goto_clips');
-};
+    if (toggle_to == 'scores') {
+        scores_div.hidden = false;
+        fulltasks_div.hidden = true;
+        clips_div.hidden = true;
+    } else if (toggle_to == 'fulltasks') {
+        scores_div.hidden = true;
+        fulltasks_div.hidden = false;
+        clips_div.hidden = true;
+    } else if (toggle_to == 'clips') {
+        scores_div.hidden = true;
+        fulltasks_div.hidden = true;
+        clips_div.hidden = false;
+    } else {
+        console.log('well that is not expected');
+    }
 
-function create_scores() {
-    console.log("Creating scores screen");
-    var scores = document.getElementById("scores");
-    scores.hidden = false;
-}
+
+};

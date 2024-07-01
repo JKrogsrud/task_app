@@ -5,26 +5,37 @@ body{
 }
 
 .navbar{
-	margin:10px;
-	padding:0px;
+	margin:1rem;
+	padding:1rem;
 	float:left;
-	width:99%;
-	border:2px solid #42432d;
-	border-width:2px 2px;
-
-	font:
+	width:100%;
+	border:1rem solid #140406;
+	border-width:2rem 2rem;
 }
 
 .navbar li {
 	display:inline; /* turns my list horizontal */
-	padding:10px;
-	margin:10px;
+	padding:1rem;
+	margin:1rem;
 }
 
 .navbar a {
 	color:#000;
-	background:#8c8c8c;
-	padding:20px 20px 10px 10px;
-	float:center; /* where the bar appears on screen */
+	background:#780712;
+	padding:1rem 1rem 1rem 1rem;
+	text-decoration:none;
 	width:auto;
+}
+
+.scores{
+    padding:1rem;
+    margin:1rem;
+}
+
+.scores player_scores{
+    border:1px solid orange;
+}
+
+.scores scores_controls{
+    border:1px solid green;
 }

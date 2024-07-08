@@ -6,7 +6,7 @@
     <!--link rel="stylesheet" href="{{ url_for('static', filename='css/all_page.css')}}"/-->
     <title>TaskAppster</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-    <script src="{{url_for('static', filename='js/control.js') }}" defer></script>
+    <script type="module" src="{{url_for('static', filename='js/control.js') }}" defer></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/control.css')}}">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <p>Taskmaster Live Controls</p>
     </div>
     <div id="connect_display">
-        <button>Open a display</button>
+        <button onclick="javascript:open_display()">Open a display</button>
     </div>
     <nav class="navbar">
         <ul class="navbar_menu">
@@ -40,10 +40,10 @@
         </span>
         <div class="scores_controls">
             <div id="update_local_scores">
-                <button>Update</button>
+                <button onclick="javascript:update_local_scores()">Update</button>
             </div>
             <div id="send_scores">
-                <button>Send</button>
+                <button onclick="javascript:send_scores()">Send</button>
             </div>
         </div>
     </div>

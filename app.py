@@ -6,17 +6,29 @@ from dotenv import load_dotenv, dotenv_values
 app = Flask(__name__)
 
 socketio = SocketIO(app)
+class Player:
+    def __init__(self, name, img):
+        self.name = name
+        self.img = img
 
 class Scores:
-    def __init__(self, players: list[str]):
+    def __init__(self, players: list[Player]):
         self.players = players
-        self.scores = {player:0 for player in self.players}
+        self.score_history = [{player: 0 for player in self.players}]
 
     def update(self, delta_scores: dict[str:int]):
+        current_scores = self.score_history[-1]
         for player, delta_score in delta_scores.items():
-            self.scores[player] += delta_score
-    def get(self) -> dict[str:int]:
-        return self.scores
+            new_scores = current_scores.copy()
+            new_scores[player] += delta_score
+        self.score_history.append(new_scores)
+
+    def get_score_history(self) -> list[dict[str:int]]:
+        return self.score_history
+
+    def get_scores_at(self, round_num: int):
+        return self.score_history[round_num]
+
 
 @app.route("/")
 def index():
@@ -46,17 +58,31 @@ def handle_connection(connection_type):
         # create Scores object to store scores
         # shelve it for later
         d = shelve.open('scores')
+
         # check if scores exists already on the shelf
+        # to update control with recent scores
         if 'scores' in d.keys():
-            pass
+            scores = d['scores']
+            recent_scores = scores.get_scores_at(-1)
+            # Send scores to control
+            socketio.emit('scores', recent_scores, to='controller')
+        # First load, so load the players
         else:
+            # setup the players
             scores = Scores(list(players.keys()))
             d['scores'] = scores
+
+            recent_scores = scores.get_scores_at(-1)
+            # send scores to control
+            socketio.emit('scores', recent_scores, to='controller')
         d.close()
     else:
         print('Unknown connection')
 
 # Control commands
+@socketio.on('connect_display')
+def connect_display():
+    pass
 
 @socketio.on('goto_scores')
 def goto_scores():
@@ -74,6 +100,14 @@ def goto_fulltasks():
 def goto_scores():
     print('opening clip view')
     # render_template(controls, data={state='clip view'})
+
+# Control -> Display
+@socketio.on('display_scores')
+def display_scores(scores):
+    pass
+    # get current scores from local storage
+    # update the scores history
+    # send the last two scores to display for an animation
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

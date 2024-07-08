@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Created the Scores class&#10;Implementing dotenv for loading players">
-      <change afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Changed functionality in js to a succinct toggle_view">
+      <change afterPath="$PROJECT_DIR$/static/js/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -111,12 +111,57 @@
       <option name="project" value="LOCAL" />
       <updated>1717785963077</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding CSS to make the control window.">
+      <option name="closed" value="true" />
+      <created>1718392344805</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718392344805</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added a background, working on navbar which will update the control in-place">
+      <option name="closed" value="true" />
+      <created>1718418162646</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718418162646</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Working on CSS to make navbar">
+      <option name="closed" value="true" />
+      <created>1718504728139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718504728139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered.">
+      <option name="closed" value="true" />
+      <created>1719860079741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719860079741</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed functionality in js to a succinct toggle_view">
+      <option name="closed" value="true" />
+      <created>1719866972130</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719866972130</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="doesn't appear to have pushed" />
     <MESSAGE value="Created the Scores class&#10;Implementing dotenv for loading players" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the Scores class&#10;Implementing dotenv for loading players" />
+    <MESSAGE value="Adding CSS to make the control window." />
+    <MESSAGE value="Added a background, working on navbar which will update the control in-place" />
+    <MESSAGE value="Working on CSS to make navbar" />
+    <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
+    <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed functionality in js to a succinct toggle_view" />
   </component>
 </project>

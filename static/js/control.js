@@ -1,8 +1,12 @@
+import Player from './player.js'
+
 var socket = io()
 
 socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });
+
+socket.on('scores', set_local_scores(recent_scores));
 
 function toggle_view(toggle_to) {
     console.log("Changing View: " + toggle_to);
@@ -26,6 +30,26 @@ function toggle_view(toggle_to) {
     } else {
         console.log('well that is not expected');
     }
-
-
 };
+
+function open_display() {
+    window.open('display');
+};
+
+// Set the current scores, reset the delta_scores to 0
+function set_local_scores(scores) {
+    console.log('setting local scores, resetting deltas');
+    // Scores should look something like Scores[Player:score]
+};
+
+// Changes scores only on current page
+// By setting the
+function update_local_scores(scores) {
+    console.log('Updating Scores...');
+};
+
+// Send scores to be displayed
+function send_scores() {
+    console.log('Sending Scores');
+    socket.emit('display_scores', scores);
+}

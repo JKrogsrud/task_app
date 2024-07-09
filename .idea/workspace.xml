@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Changed functionality in js to a succinct toggle_view">
-      <change afterPath="$PROJECT_DIR$/static/js/player.js" afterDir="false" />
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Creating modules for player objects and score objects for better readability.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719866972130</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creating modules for player objects and score objects for better readability.">
+      <option name="closed" value="true" />
+      <created>1720470655148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720470655148</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,6 +168,7 @@
     <MESSAGE value="Working on CSS to make navbar" />
     <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
     <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed functionality in js to a succinct toggle_view" />
+    <MESSAGE value="Creating modules for player objects and score objects for better readability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating modules for player objects and score objects for better readability." />
   </component>
 </project>

@@ -6,6 +6,11 @@ socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });
 
+// Setup scores, full_episodes and clips
+socket.on('setup', function(args) {
+
+});
+
 socket.on('scores', set_local_scores(recent_scores));
 
 function toggle_view(toggle_to) {

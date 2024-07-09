@@ -10,17 +10,26 @@ class Player:
     def __init__(self, name, img):
         self.name = name
         self.img = img
+        self.current_score = 0
+
+    def get_player_info(self):
+        return {'name': self.name, 'img': self.img, 'score': self.current_score}
+
+    def update_score(self, score_delta):
+        self.current_score += score_delta
+
 
 class Scores:
     def __init__(self, players: list[Player]):
         self.players = players
-        self.score_history = [{player: 0 for player in self.players}]
+        self.score_history = [{player.name: 0 for player in self.players}]
 
     def update(self, delta_scores: dict[str:int]):
         current_scores = self.score_history[-1]
         for player, delta_score in delta_scores.items():
             new_scores = current_scores.copy()
             new_scores[player] += delta_score
+            player.update_score(delta_score)
         self.score_history.append(new_scores)
 
     def get_score_history(self) -> list[dict[str:int]]:
@@ -28,6 +37,10 @@ class Scores:
 
     def get_scores_at(self, round_num: int):
         return self.score_history[round_num]
+
+    def get_json(self):
+        # this should return an output friendly to send to front end
+        pass
 
 
 @app.route("/")
@@ -52,30 +65,31 @@ def handle_connection(connection_type):
     elif connection_type == 'controller':
         join_room('controller')
 
-        #load players.env - should load pictures and names
-        players = dotenv_values("players.env")
-
-        # create Scores object to store scores
-        # shelve it for later
+        # Either this is the first time we load the page or we have stored
+        # some information on it to check
         d = shelve.open('scores')
 
-        # check if scores exists already on the shelf
-        # to update control with recent scores
-        if 'scores' in d.keys():
-            scores = d['scores']
-            recent_scores = scores.get_scores_at(-1)
-            # Send scores to control
-            socketio.emit('scores', recent_scores, to='controller')
-        # First load, so load the players
-        else:
-            # setup the players
-            scores = Scores(list(players.keys()))
-            d['scores'] = scores
+        if len(d.keys()) == 0:
+            # first load, so we have need to grab info from the environment
+            # The dict received will look like: {PLAYER_1_INFO: "name, img" .. }
+            env_players = dotenv_values('player_info.env')
+            players = []
+            for player in env_players:
+                player_name, player_img = env_players[player].split(", ")
+                players.append(Player(player_name, player_img))
 
-            recent_scores = scores.get_scores_at(-1)
-            # send scores to control
-            socketio.emit('scores', recent_scores, to='controller')
-        d.close()
+            # create a scores object
+            scores = Scores(players)
+            # save it to shelf
+            d['scores'] = scores
+            d.close()
+        else:
+            # looks like we already have some info so just set that up
+            scores = d['scores']
+
+        #  either way we now have scores to send for build
+
+
     else:
         print('Unknown connection')
 

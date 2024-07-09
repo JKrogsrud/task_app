@@ -38,9 +38,13 @@ class Scores:
     def get_scores_at(self, round_num: int):
         return self.score_history[round_num]
 
-    def get_json(self):
+    def get_dict(self):
         # this should return an output friendly to send to front end
-        pass
+        # first make it as a dictionary and we will convert
+        score_bundle = {player.name:
+                            {'image': player.img, 'current_score': player.current_score}
+                        for player in self.players}
+        return score_bundle
 
 
 @app.route("/")
@@ -87,8 +91,8 @@ def handle_connection(connection_type):
             # looks like we already have some info so just set that up
             scores = d['scores']
 
-        #  either way we now have scores to send for build
-
+        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': 'tmp', 'clips': 'tmp'}
+        socketio.emit('setup', setup_bundle, to='controller')
 
     else:
         print('Unknown connection')

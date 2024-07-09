@@ -7,8 +7,9 @@ socket.on('connect', function() {
 });
 
 // Setup scores, full_episodes and clips
-socket.on('setup', function(args) {
-
+socket.on('setup', function(setup_bundle) {
+    console.log('received bundle');
+    console.log(setup_bundle);
 });
 
 socket.on('scores', set_local_scores(recent_scores));

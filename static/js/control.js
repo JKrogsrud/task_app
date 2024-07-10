@@ -1,18 +1,5 @@
-import Player from './player.js'
 
-var socket = io()
-
-socket.on('connect', function() {
-    socket.emit('connected', 'controller');
-});
-
-// Setup scores, full_episodes and clips
-socket.on('setup', function(setup_bundle) {
-    console.log('received bundle');
-    console.log(setup_bundle);
-});
-
-socket.on('scores', set_local_scores(recent_scores));
+var socket = io();
 
 function toggle_view(toggle_to) {
     console.log("Changing View: " + toggle_to);
@@ -35,7 +22,7 @@ function toggle_view(toggle_to) {
         clips_div.hidden = false;
     } else {
         console.log('well that is not expected');
-    }
+    };
 };
 
 function open_display() {
@@ -58,4 +45,45 @@ function update_local_scores(scores) {
 function send_scores() {
     console.log('Sending Scores');
     socket.emit('display_scores', scores);
-}
+};
+
+socket.on('connect', function() {
+    socket.emit('connected', 'controller');
+});
+
+// Setup scores, full_episodes and clips
+socket.on('setup', function(setup_bundle) {
+
+    // Sanity Check
+    console.log('received bundle');
+    console.log(setup_bundle);
+
+    // Let's build the score interface from the 'setup' portion
+    let players = Object.keys(setup_bundle['scores']);
+    let scores = setup_bundle['scores'];
+    players.forEach((player) => {
+        // Grab the img and current score
+        let img = scores[player]['image'];
+        let score = scores[player]['current_score'];
+
+        // create a new div to hold everything
+        const new_div = document.createElement("div");
+        new_div.id = player;
+
+        // add an image
+        var image = document.createElement('img');
+        image.src = './static/assets/images/' + img;
+        // console.log(image.src);
+
+        new_div.appendChild(image);
+
+        // Now locate the scores div and append this
+        var player_scores_div = document.getElementById('scores');
+        player_scores_div.appendChild(new_div);
+    });
+});
+
+// Update local scores
+socket.on('scores', function(recent_scores) {
+    set_local_scores(recent_scores);
+});

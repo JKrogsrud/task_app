@@ -6,7 +6,7 @@
     <!--link rel="stylesheet" href="{{ url_for('static', filename='css/all_page.css')}}"/-->
     <title>TaskAppster</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-    <script type="module" src="{{url_for('static', filename='js/control.js') }}" defer></script>
+    <script src="{{url_for('static', filename='js/control.js') }}" defer></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/control.css')}}">
 </head>
 <body>
@@ -14,24 +14,24 @@
         <p>Taskmaster Live Controls</p>
     </div>
     <div id="connect_display">
-        <button onclick="javascript:open_display()">Open a display</button>
+        <button>Open a display</button>
     </div>
     <nav class="navbar">
         <ul class="navbar_menu">
             <li class="navbar_item">
-                <span><a href="javascript:toggle_view('scores');">Scores</a></span>
+                <span><a href="javascript:toggle_view('scores')">Scores</a></span>
             </li>
             <li class="navbar_item">
-                <span><a href="javascript:toggle_view('fulltasks');">Full Tasks</a></span>
+                <span><a>Full Tasks</a></span>
             </li>
             <li class="navbar_item">
-                <span><a href="javascript:toggle_view('clips');">Clips</a></span>
+                <span><a>Clips</a></span>
             </li>
         </ul>
     </nav>
     <div hidden id="scores">
         <h1>SCORES</h1>
-        <span class="player_scores">
+        <span id="player_scores">
             <!-- div player -->
                 <!-- image -->
                 <!-- div score_adjust-->

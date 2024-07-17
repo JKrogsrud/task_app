@@ -67,8 +67,9 @@ socket.on('setup', function(setup_bundle) {
         let score = scores[player]['current_score'];
 
         // create a new div to hold everything
-        const new_div = document.createElement("div");
-        new_div.id = player;
+        const player_score_div = document.createElement("div");
+        player_score_div.id = player;
+        player_score_div.class = 'player_score';
 
         // add an image
         var image = document.createElement('img');
@@ -77,9 +78,23 @@ socket.on('setup', function(setup_bundle) {
 
         new_div.appendChild(image);
 
+        // Next we create buttons that will specifically affect this player
+        const button_span = document.createElement("span");
+        button_span.class = 'score_adjustment_buttons';
+
+        const negative_button = document.createElement("button");
+        negative_button.class = 'negative_button';
+
+        const positive_button = document.createElement("button");
+        positive_button.class = 'positive_button';
+
+        const score_display = document.createElement("p");
+        score_display.class = 'score_display';
+
+
         // Now locate the scores div and append this
-        var player_scores_div = document.getElementById('scores');
-        player_scores_div.appendChild(new_div);
+        var player_scores_div = document.getElementById('player_scores');
+        player_scores_div.appendChild(player_score_div);
     });
 });
 

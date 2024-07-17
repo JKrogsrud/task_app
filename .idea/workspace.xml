@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Sending setup packet correctly, whoop">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720551674071</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)">
+      <option name="closed" value="true" />
+      <created>1721235977245</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721235977245</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -190,6 +198,7 @@
     <MESSAGE value="Creating modules for player objects and score objects for better readability." />
     <MESSAGE value="Restting how score data is setup, stored and sent on backend so I have something to work with on front end" />
     <MESSAGE value="Sending setup packet correctly, whoop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sending setup packet correctly, whoop" />
+    <MESSAGE value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
   </component>
 </project>

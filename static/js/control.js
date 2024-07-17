@@ -69,28 +69,61 @@ socket.on('setup', function(setup_bundle) {
         // create a new div to hold everything
         const player_score_div = document.createElement("div");
         player_score_div.id = player;
-        player_score_div.class = 'player_score';
+        player_score_div.classList.add("player_score");
 
         // add an image
         var image = document.createElement('img');
         image.src = './static/assets/images/' + img;
         // console.log(image.src);
 
-        new_div.appendChild(image);
+        player_score_div.appendChild(image);
 
         // Next we create buttons that will specifically affect this player
         const button_span = document.createElement("span");
-        button_span.class = 'score_adjustment_buttons';
+        button_span.classList.add("score_adjustment_buttons");
 
         const negative_button = document.createElement("button");
-        negative_button.class = 'negative_button';
+        negative_button.classList.add("negative_button");
+        negative_button.textContent= '-'
 
         const positive_button = document.createElement("button");
-        positive_button.class = 'positive_button';
+        positive_button.classList.add = 'positive_button';
+        positive_button.textContent = '+'
 
-        const score_display = document.createElement("p");
-        score_display.class = 'score_display';
+        const score_display = document.createElement("span");
+        score_display.classList.add("score_display");
 
+        const current_score = document.createElement("p");
+        current_score.classList.add("current_score");
+        current_score.textContent = score;
+
+        const score_delta = document.createElement("p");
+        score_delta.classList.add("score_delta");
+        score_delta.textContent = 0;
+
+        // Add some event listeners to these buttons
+        negative_button.addEventListener("click", function() {
+           current_score.textContent -= 1;
+           score_delta.textContent -= 1;
+        });
+
+        // Add some event listeners to these buttons
+        positive_button.addEventListener("click", function() {
+           current_score.textContent = parseInt(current_score.textContent) + 1;
+           score_delta.textContent = parseInt(score_delta.textContent) + 1;
+        });
+
+        // Append score pieces to their span
+        score_display.appendChild(current_score);
+        score_display.appendChild(score_delta);
+
+        // Append the buttons and displays to their span
+        button_span.appendChild(negative_button);
+        button_span.appendChild(score_display);
+        button_span.appendChild(positive_button);
+
+        // Append the buttons to the player_scores_div
+        player_score_div.appendChild(button_span);
 
         // Now locate the scores div and append this
         var player_scores_div = document.getElementById('player_scores');

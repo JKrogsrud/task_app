@@ -35,16 +35,30 @@ function set_local_scores(scores) {
     // Scores should look something like Scores[Player:score]
 };
 
-// Changes scores only on current page
-// By setting the
-function update_local_scores(scores) {
-    console.log('Updating Scores...');
-};
-
 // Send scores to be displayed
 function send_scores() {
+    // Acquire the current scores
+
+    var scores = new Array();
+
+    const scores = document.querySelectorAll(".current_score");
+
+    scores.forEach((score) => {
+        // grab actual score
+        let current_score = score.textValue;
+
+        // Find the player
+        let player_id = score.closest(".player_score").id;
+
+        // Add the player id and score to scores
+        scores.push({player_id: current_score});
+    });
+
+    // Emit them to the backend
     console.log('Sending Scores');
     socket.emit('display_scores', scores);
+
+    // Update score_deltas to 0
 };
 
 socket.on('connect', function() {
@@ -129,6 +143,8 @@ socket.on('setup', function(setup_bundle) {
         var player_scores_div = document.getElementById('player_scores');
         player_scores_div.appendChild(player_score_div);
     });
+
+    console.log("Scores page setup");
 });
 
 // Update local scores

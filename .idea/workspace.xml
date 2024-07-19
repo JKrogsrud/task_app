@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Added functionality to the - and + buttons">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="updated send_scores function .. needs to be tested">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721242489681</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updated send_scores function .. needs to be tested">
+      <option name="closed" value="true" />
+      <created>1721337780058</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721337780058</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -209,6 +217,7 @@
     <MESSAGE value="Sending setup packet correctly, whoop" />
     <MESSAGE value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
     <MESSAGE value="Added functionality to the - and + buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to the - and + buttons" />
+    <MESSAGE value="updated send_scores function .. needs to be tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated send_scores function .. needs to be tested" />
   </component>
 </project>

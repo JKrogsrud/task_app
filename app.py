@@ -102,13 +102,6 @@ def handle_connection(connection_type):
 def connect_display():
     pass
 
-@socketio.on('goto_scores')
-def goto_scores():
-    print('opening score view')
-    # Not working here, maybe we just do this front end only
-    # by hiding the scores view and unhiding it when the button
-    # is clicked
-
 @socketio.on('goto_fulltasks')
 def goto_fulltasks():
     print('opening full task view')
@@ -122,6 +115,7 @@ def goto_scores():
 # Control -> Display
 @socketio.on('display_scores')
 def display_scores(scores):
+    print(scores)
     pass
     # get current scores from local storage
     # update the scores history

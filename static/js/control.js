@@ -29,29 +29,25 @@ function open_display() {
     window.open('display');
 };
 
-// Set the current scores, reset the delta_scores to 0
-function set_local_scores(scores) {
-    console.log('setting local scores, resetting deltas');
-    // Scores should look something like Scores[Player:score]
-};
-
 // Send scores to be displayed
 function send_scores() {
     // Acquire the current scores
 
     var scores = new Array();
 
-    const scores = document.querySelectorAll(".current_score");
+    const current_scores = document.querySelectorAll(".current_score");
 
-    scores.forEach((score) => {
+    current_scores.forEach((score) => {
         // grab actual score
-        let current_score = score.textValue;
+        let current_score = score.textContent;
 
         // Find the player
         let player_id = score.closest(".player_score").id;
 
         // Add the player id and score to scores
-        scores.push({player_id: current_score});
+        console.log(player_id);
+        console.log(current_score);
+        scores.push({"player" : player_id, "current_score" : current_score});
     });
 
     // Emit them to the backend
@@ -59,6 +55,11 @@ function send_scores() {
     socket.emit('display_scores', scores);
 
     // Update score_deltas to 0
+    const score_deltas = document.querySelectorAll(".score_delta");
+    score_deltas.forEach((delta) => {
+        // set at 0
+        delta.textContent = 0;
+    });
 };
 
 socket.on('connect', function() {

@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Send_scores updated, tested and working as far as I can tell. backend receiving an array of JSON entries">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Created the start of display to show the player pictures and current scores.&#10;&#10;Next:  work on CSS and animation for image display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/display.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721413898091</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created the start of display to show the player pictures and current scores.&#10;&#10;Next:  work on CSS and animation for image display">
+      <option name="closed" value="true" />
+      <created>1721758504486</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721758504486</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -231,6 +234,7 @@
     <MESSAGE value="Added functionality to the - and + buttons" />
     <MESSAGE value="updated send_scores function .. needs to be tested" />
     <MESSAGE value="Send_scores updated, tested and working as far as I can tell. backend receiving an array of JSON entries" />
-    <option name="LAST_COMMIT_MESSAGE" value="Send_scores updated, tested and working as far as I can tell. backend receiving an array of JSON entries" />
+    <MESSAGE value="Created the start of display to show the player pictures and current scores.&#10;&#10;Next:  work on CSS and animation for image display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the start of display to show the player pictures and current scores.&#10;&#10;Next:  work on CSS and animation for image display" />
   </component>
 </project>

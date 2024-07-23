@@ -1,7 +1,6 @@
 var socket = io()
 var body = document.body
 
-
 socket.on('connect', function() {
     socket.emit('connected', 'display');
 });
@@ -42,30 +41,50 @@ socket.on('show_score_animation', function(score_bundle) {
     const score_container = document.createElement('span');
     score_container.classList.add('score_container');
 
-    for (const player in new_scores) {
-//        console.log(`${player}: ${new_scores[player]}`);
-//        console.log('image:');
-//        console.log(`${sessionStorage.getItem(player)}`);
-        // can i just show image?
+    let sorted_players_prev = [];
+    for (var player in prev_scores) {
+        sorted_players_prev.push([player, prev_scores[player]]);
+    };
+
+    sorted_players_prev.sort(function(a,b) {
+        return a[1] - b[1];
+    });
+
+    let sorted_players_new = [];
+    for (var player in new_scores) {
+        sorted_players_new.push([player, prev_scores[player]]);
+    };
+
+    sorted_players_new.sort(function(a,b) {
+        return a[1] - b[1];
+    });
+
+    // Both containers are now sorted as arrays [[name, score], ... ]
+
+    for (let i = 0; i < sorted_players_prev.length; i++) {
 
         const player_div = document.createElement('div');
+        const player_name = sorted_players_prev[i][0]
         player_div.classList.add('player');
+        player_div.setAttribute('id', player_name);
 
-        let player_image_location = sessionStorage.getItem(player);
+        let player_image_location = sessionStorage.getItem(player_name);
         var player_image = document.createElement('img');
         player_image.src = './static/assets/images/' + player_image_location;
 
         var current_score = document.createElement('p');
         current_score.classList.add('current_score');
-        current_score.textContent = new_scores[player];
+        current_score.textContent = prev_scores[player_name];
 
         // Show scores
         player_div.appendChild(player_image);
         player_div.appendChild(current_score);
 
-        score_container.appendChild(player_div)
+        score_container.appendChild(player_div);
     };
 
     body.append(score_container);
+
+    // Now we move the scores
 
 });

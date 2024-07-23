@@ -62,6 +62,11 @@ function send_scores() {
     });
 };
 
+// This should emit the signal to backend to reset the scores
+function reset_scores() {
+    console.log('Resetting scores');
+}
+
 socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });

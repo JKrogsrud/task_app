@@ -15,8 +15,14 @@ class Player:
     def get_player_info(self):
         return {'name': self.name, 'img': self.img, 'score': self.current_score}
 
-    def update_score(self, score_delta):
-        self.current_score += score_delta
+    def update_score(self, new_score):
+        self.current_score = new_score
+
+    def __eq__(self, name):
+        if name == self.name:
+            return True
+        else:
+            return False
 
 
 class Scores:
@@ -24,19 +30,27 @@ class Scores:
         self.players = players
         self.score_history = [{player.name: 0 for player in self.players}]
 
-    def update(self, delta_scores: dict[str:int]):
-        current_scores = self.score_history[-1]
-        for player, delta_score in delta_scores.items():
-            new_scores = current_scores.copy()
-            new_scores[player] += delta_score
-            player.update_score(delta_score)
-        self.score_history.append(new_scores)
+    def update(self, new_scores: list[dict[str:str,str:str]]):
+        # This accepts a list [dict('player':player, 'current_score':str(current_score))]
+        new_score_listing = {}
+        for player_entry in new_scores:
+            player_name = player_entry['player']
+            player_score = int(player_entry['current_score'])
+            new_score_listing[player_name] = player_score
+
+            # Update Player object with current score
+            self.players[self.players.index(player_name)].update_score(player_score)
+        self.score_history.append(new_score_listing)
+
 
     def get_score_history(self) -> list[dict[str:int]]:
         return self.score_history
 
     def get_scores_at(self, round_num: int):
         return self.score_history[round_num]
+
+    def get_current_score(self):
+        return self.get_scores_at(-1)
 
     def get_dict(self):
         # this should return an output friendly to send to front end
@@ -66,6 +80,15 @@ def handle_connection(connection_type):
     if connection_type == 'display':
         join_room('display')
         socketio.emit('display connected', to='controller')
+
+        # Create the setup bundle
+        ## score_display: send player info with player image locations
+        d = shelve.open('scores')
+        scores = d['scores']
+
+        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': 'tmp', 'clips': 'tmp'}
+        socketio.emit('setup', setup_bundle, to='display')
+
     elif connection_type == 'controller':
         join_room('controller')
 
@@ -98,28 +121,30 @@ def handle_connection(connection_type):
         print('Unknown connection')
 
 # Control commands
-@socketio.on('connect_display')
-def connect_display():
-    pass
-
-@socketio.on('goto_fulltasks')
-def goto_fulltasks():
-    print('opening full task view')
-    # render_template(controls, data={state='fulltask view'})
-
-@socketio.on('goto_clips')
-def goto_scores():
-    print('opening clip view')
-    # render_template(controls, data={state='clip view'})
 
 # Control -> Display
 @socketio.on('display_scores')
 def display_scores(scores):
-    print(scores)
-    pass
-    # get current scores from local storage
-    # update the scores history
-    # send the last two scores to display for an animation
+    # Sanity Check
+    # print(scores)
+    # print(type(scores[-1]))
+
+    # update score history
+    d = shelve.open('scores')
+
+    score_hist = d['scores']
+    score_hist.update(scores)
+    d['scores'] = score_hist
+
+    d.close()
+
+    # send info to display to show the new score
+    print("sending scores to diplay:")
+    print(score_hist.get_score_history())
+    socketio.emit('show_score_animation', score_hist.get_score_history())
+    ## recall this should look like:
+    ## [{player:score}]
+
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

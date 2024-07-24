@@ -122,6 +122,27 @@ def handle_connection(connection_type):
 
 # Control commands
 
+@socketio.on('reset')
+def reset():
+    # This should reset all scores saved on shelf
+    d = shelve.open('scores')
+
+    del d['scores']
+
+    # Return all score data to original setting
+    # TODO: cleaner would have been to have player info and scores seperate here
+    env_players = dotenv_values('player_info.env')
+    players = []
+    for player in env_players:
+        player_name, player_img = env_players[player].split(", ")
+        players.append(Player(player_name, player_img))
+
+    scores = Scores(players)
+    d['scores'] = scores
+
+    d.close()
+
+    socketio.emit('reset', to='display')
 # Control -> Display
 @socketio.on('display_scores')
 def display_scores(scores):

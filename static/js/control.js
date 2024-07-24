@@ -65,6 +65,19 @@ function send_scores() {
 // This should emit the signal to backend to reset the scores
 function reset_scores() {
     console.log('Resetting scores');
+    let current_scores = document.getElementsByClassName('current_score');
+
+    Array.from(current_scores).forEach((score) => {
+       score.textContent = 0;
+    });
+
+    let score_deltas = document.getElementsByClassName('score_delta');
+
+    Array.from(score_deltas).forEach((delta) => {
+       delta.textContent = 0;
+    });
+
+    socket.emit('reset')
 }
 
 socket.on('connect', function() {

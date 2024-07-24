@@ -25,6 +25,15 @@ socket.on('setup', function(setup_bundle) {
     };
 });
 
+socket.on('reset', function() {
+    // The only data held by display is in the textContent of current_score class
+    let scores = document.selectElementsByClassName('current_score');
+
+    score.forEach((score) => {
+        score.textContent = 0;
+    });
+});
+
 socket.on('show_score_animation', function(score_bundle) {
 
     // Clear the display area

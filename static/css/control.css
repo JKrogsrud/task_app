@@ -5,26 +5,29 @@ body{
 }
 
 .navbar{
-	margin:1rem;
-	padding:1rem;
+	margin:0.1rem;
+	padding:0.5rem;
 	float:left;
-	width:100%;
 	border:1rem solid #140406;
-	border-width:2rem 2rem;
+	border-width:0.5rem 0.5rem;
 }
 
 .navbar li {
 	display:inline; /* turns my list horizontal */
-	padding:1rem;
-	margin:1rem;
+	padding:0.1rem;
+	margin:0.9rem;
 }
 
 .navbar a {
 	color:#000;
 	background:#780712;
-	padding:1rem 1rem 1rem 1rem;
+	padding:1.2rem;
 	text-decoration:none;
 	width:auto;
+}
+
+h1{
+	color: #430606;
 }
 
 .scores{
@@ -33,9 +36,9 @@ body{
 }
 
 .scores player_scores{
-    border:1px solid orange;
+    border:1rem solid orange;
 }
 
 .scores scores_controls{
-    border:1px solid green;
+    border:1rem solid green;
 }

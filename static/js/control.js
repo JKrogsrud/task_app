@@ -112,7 +112,7 @@ socket.on('setup', function(setup_bundle) {
         player_score_div.appendChild(image);
 
         // Next we create buttons that will specifically affect this player
-        const button_span = document.createElement("span");
+        const button_span = document.createElement("div");
         button_span.classList.add("score_adjustment_buttons");
 
         const negative_button = document.createElement("button");

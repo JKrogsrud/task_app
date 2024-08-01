@@ -83,11 +83,11 @@ h1{
 }
 
 .current_score {
-	background-color:aliceblue;
+	background-color: aliceblue;
 }
 
 .score_delta {
-	background-color: cadetblue
+	background-color: cadetblue;
 }
 
 .scores_controls{

@@ -1,6 +1,33 @@
+@font-face { font-family: Typewriter; src: url("../assets/fonts/veteran_typewriter.ttf");}
+
 body{
     background-image: url("../assets/taskmaster_at_typewriter.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    margin-top:8rem;
+    margin-left:4rem;
 }
 
+.header{
+    font-size: 5rem;
+    font-family: Typewriter;
+}
+
+.score_animation_container {
+    position: relative;
+    width: 100rem;
+    height: 30rem;
+}
+
+.player {
+    display: inline-block;
+    width:20rem;
+    height:30rem;
+    text-align: center;
+    position: relative;
+}
+
+.current_score {
+    font-size: 3rem;
+    font-family: Typewriter;
+}

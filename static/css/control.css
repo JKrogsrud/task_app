@@ -1,10 +1,18 @@
+@font-face { font-family: Typewriter; src: url("../assets/fonts/veteran_typewriter.ttf");}
+
+.header p{
+    font-size: 3.5rem;
+}
+
 body{
     background-image: url("../assets/taskmaster_at_typewriter.jpg");
     background-size: cover;
+    display: block;
+    font-family: Typewriter;
 }
 
 .navbar{
-	display: inline-flex;
+	display: block;
 	margin:0.1rem;
 	padding:0.5rem;
 	border:1rem solid #140406;
@@ -12,7 +20,7 @@ body{
 }
 
 .navbar li {
-	display:inline-flex; /* turns my list horizontal */
+	display:inline-block; /* turns my list horizontal */
 	padding:0.1rem;
 	margin:0.9rem;
 }
@@ -23,6 +31,7 @@ body{
 	padding:1.2rem;
 	text-decoration:none;
 	width:auto;
+	font-size: 2rem;
 }
 
 h1{
@@ -30,41 +39,51 @@ h1{
 }
 
 #scores{
-	display: block;
+	display: block-flex;
     padding:0.5rem;
     margin:0.5rem;
 }
 
 #player_scores{
-    display: inline-flex;
+    display: block;
     border:0.5rem solid red;
-    float: left;
 }
 
 .player_score{
-	display:inline-block;
+	display: inline-block;
 	margin-block:0.5rem;
 	padding: 1rem;
+	text-align: center;
 }
 
 .score_adjustment_buttons{
-	display:flex;
+	display: block;
 	margin: .5rem;
 }
 
 .negative_button, .positive_button{
-
+	font-size: 2rem;
 }
 
 .score_display{
-	display: flex;
+	display: inline-block;
 	margin: .5rem
 }
 
 .current_score, .score_delta{
+	display: inline-block;
 	margin: .8rem;
 }
 
 .scores_controls{
 	display: block;
+	clear:left;
+}
+
+#commit_scores{
+	display: inline-block;
+}
+
+#reset{
+	display: inline-block;
 }

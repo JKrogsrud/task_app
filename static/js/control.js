@@ -120,10 +120,10 @@ socket.on('setup', function(setup_bundle) {
         negative_button.textContent= '-'
 
         const positive_button = document.createElement("button");
-        positive_button.classList.add = 'positive_button';
+        positive_button.classList.add('positive_button');
         positive_button.textContent = '+'
 
-        const score_display = document.createElement("span");
+        const score_display = document.createElement("div");
         score_display.classList.add("score_display");
 
         const current_score = document.createElement("p");

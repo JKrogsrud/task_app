@@ -35,6 +35,7 @@ body{
 }
 
 h1{
+	font-size: 3rem;
 	color: #430606;
 }
 
@@ -46,7 +47,6 @@ h1{
 
 #player_scores{
     display: block;
-    border:0.5rem solid red;
 }
 
 .player_score{
@@ -58,32 +58,50 @@ h1{
 
 .score_adjustment_buttons{
 	display: block;
-	margin: .5rem;
+	height: 4.6rem;
 }
 
 .negative_button, .positive_button{
-	font-size: 2rem;
+	font-size: 3rem;
+	width: 4.5rem;
+	height: 4.5rem;
+	background-color: #780712;
+	justify-content: center;
 }
 
 .score_display{
 	display: inline-block;
-	margin: .5rem
+	height: 4rem;
+
 }
 
 .current_score, .score_delta{
 	display: inline-block;
-	margin: .8rem;
+	font-size: 3rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.current_score {
+	background-color:aliceblue;
+}
+
+.score_delta {
+	background-color: cadetblue
 }
 
 .scores_controls{
 	display: block;
 	clear:left;
+	margin-top: 4rem;
 }
 
-#commit_scores{
+#commit_scores, #reset {
 	display: inline-block;
 }
 
-#reset{
-	display: inline-block;
+#commit_scores button, #reset button{
+	font-size: 3.5rem;
+	font-family: Typewriter;
+	background-color:#780712;
 }

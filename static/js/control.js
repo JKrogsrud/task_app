@@ -84,7 +84,7 @@ socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });
 
-// Setup scores, full_episodes and clips
+// SCORES
 socket.on('setup', function(setup_bundle) {
 
     // Sanity Check
@@ -106,7 +106,7 @@ socket.on('setup', function(setup_bundle) {
 
         // add an image
         var image = document.createElement('img');
-        image.src = './static/assets/images/' + img;
+        image.src = './static/assets/images/players/' + img;
         // console.log(image.src);
 
         player_score_div.appendChild(image);
@@ -162,8 +162,57 @@ socket.on('setup', function(setup_bundle) {
         var player_scores_div = document.getElementById('player_scores');
         player_scores_div.appendChild(player_score_div);
     });
-
     console.log("Scores page setup");
+
+    // CLIPS
+    clips = setup_bundle['clips'];
+
+    var clips_container = document.getElementById('clips');
+
+    clips.forEach((clip) => {
+        // Pull the info so its readable
+        let name = clip['name'];
+        let still = clip['still'];
+        let loc = clip['loc'];
+        let description = clip['description'];
+        let info = clip['info'];
+
+        const clip_div = document.createElement("div");
+        clip_div.id = name;
+        clip_div.classList.add("clip");
+
+        // add image_still
+        var clip_image = document.createElement('img');
+        clip_image.src = './static/assets/images/clips/' + still;
+
+        // Add name of clip
+        const name_div = document.createElement("div");
+        name_div.classList.add("name");
+        name_div.textContent = name;
+
+        // Description
+        const description_div = document.createElement("p");
+        description_div.classList.add("description");
+        description_div.textContent = description;
+
+        // Info
+        const info_div = document.createElement("p");
+        info_div.classList.add("info");
+        info_div.textContent = info;
+
+        clip_div.appendChild(clip_image);
+        clip_div.appendChild(name_div);
+        clip_div.appendChild(description_div);
+        clip_div.appendChild(info_div);
+
+        clips_container.appendChild(clip_div);
+
+        // Add event listeners for clicking image
+
+    });
+
+
+
 });
 
 // Update local scores

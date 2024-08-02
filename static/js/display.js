@@ -34,7 +34,7 @@ socket.on('reset', function() {
     });
 });
 
-
+// FOR SCORES
 socket.on('show_scores', function(score_bundle) {
 
     // Clear the display area

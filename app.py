@@ -60,7 +60,6 @@ class Scores:
                         for player in self.players}
         return score_bundle
 
-
 @app.route("/")
 def index():
     return redirect('/control')
@@ -114,7 +113,18 @@ def handle_connection(connection_type):
             # looks like we already have some info so just set that up
             scores = d['scores']
 
-        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': 'tmp', 'clips': 'tmp'}
+        # Setup the clips
+        env_clips = dotenv_values('clip_info.env')
+        clips = []
+        for clip in env_clips:
+            clip_name, clip_still, clip_loc, clip_description, clip_info = env_clips[clip].split("^^")
+            clips.append({'name': clip_name,
+                          'still': clip_still,
+                          'loc': clip_loc,
+                          'description': clip_description,
+                          'info': clip_info})
+
+        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': 'tmp', 'clips': clips}
         socketio.emit('setup', setup_bundle, to='controller')
 
     else:
@@ -146,9 +156,6 @@ def reset():
 # Control -> Display
 @socketio.on('display_scores')
 def display_scores(scores):
-    # Sanity Check
-    # print(scores)
-    # print(type(scores[-1]))
 
     # update score history
     d = shelve.open('scores')
@@ -163,8 +170,6 @@ def display_scores(scores):
     print("sending scores to diplay:")
     print(score_hist.get_score_history())
     socketio.emit('show_scores', score_hist.get_score_history())
-    ## recall this should look like:
-    ## [{player:score}]
 
 
 if __name__ == '__main__':

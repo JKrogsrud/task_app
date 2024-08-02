@@ -13,6 +13,7 @@ body{
     font-family: Typewriter;
 }
 
+/* Score Display */
 .score_animation_container {
     position: relative;
     width: 100rem;
@@ -31,3 +32,6 @@ body{
     font-size: 3rem;
     font-family: Typewriter;
 }
+
+/* Clips */
+

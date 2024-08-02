@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="CSS">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="baseline working without animation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -33,21 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "baseline",
+    "last_opened_file_path": "C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images\players" />
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static" />
     </key>
   </component>
@@ -264,7 +275,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722548601909</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Issues with animation so far, going to branch a copy that just displays score and then do some weird stuff on the other branch">
+      <option name="closed" value="true" />
+      <created>1722612467262</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1722612467262</updated>
+    </task>
+    <task id="LOCAL-00023" summary="baseline working without animation">
+      <option name="closed" value="true" />
+      <created>1722613209801</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1722613209801</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -289,6 +316,8 @@
     <MESSAGE value="Further CSS updates: new font loading" />
     <MESSAGE value="CSS updates: changed positioning, background color and size of buttons and score displays." />
     <MESSAGE value="CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS" />
+    <MESSAGE value="Issues with animation so far, going to branch a copy that just displays score and then do some weird stuff on the other branch" />
+    <MESSAGE value="baseline working without animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="baseline working without animation" />
   </component>
 </project>

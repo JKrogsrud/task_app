@@ -39,6 +39,8 @@ h1{
 	color: #430606;
 }
 
+/* Scores */
+
 #scores{
 	display: block-flex;
     padding:0.5rem;
@@ -105,3 +107,5 @@ h1{
 	font-family: Typewriter;
 	background-color:#780712;
 }
+
+/* Clips */

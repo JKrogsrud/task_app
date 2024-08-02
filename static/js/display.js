@@ -70,7 +70,7 @@ socket.on('show_scores', function(score_bundle) {
 
         let player_image_location = sessionStorage.getItem(player_name);
         var player_image = document.createElement('img');
-        player_image.src = './static/assets/images/' + player_image_location;
+        player_image.src = './static/assets/images/players' + player_image_location;
 
         var current_score = document.createElement('p');
         current_score.classList.add('current_score');
@@ -85,4 +85,27 @@ socket.on('show_scores', function(score_bundle) {
     };
 
     body.appendChild(score_container);
+});
+
+// CLIPS
+
+socket.on('play_clip', function(loc) {
+
+   // Clear the display area
+    while (body.firstChild) {
+        body.removeChild(body.firstChild);
+    };
+
+    // create a new multimedia div
+    let vid = document.createElement('video');
+    vid.autoplay = true;
+    let source = document.createElement('source');
+    source.src = './static/assets/videos/clips/' + loc;
+    source.type = 'video/mp4';
+
+    vid.appendChild(source);
+    body.appendChild(vid);
+
+
+
 });

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="baseline working without animation">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Clips initially setup. Need to add event listeners so that when image is clicked it plays the video on the display side.&#10;&#10;Also need to do all the CSS for how they look on both control and display side.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.app.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "baseline",
-    "last_opened_file_path": "C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;baseline&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images" />
@@ -291,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722613209801</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Clips initially setup. Need to add event listeners so that when image is clicked it plays the video on the display side.&#10;&#10;Also need to do all the CSS for how they look on both control and display side.">
+      <option name="closed" value="true" />
+      <created>1722620632520</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1722620632520</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -318,6 +324,7 @@
     <MESSAGE value="CSS" />
     <MESSAGE value="Issues with animation so far, going to branch a copy that just displays score and then do some weird stuff on the other branch" />
     <MESSAGE value="baseline working without animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="baseline working without animation" />
+    <MESSAGE value="Clips initially setup. Need to add event listeners so that when image is clicked it plays the video on the display side.&#10;&#10;Also need to do all the CSS for how they look on both control and display side." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clips initially setup. Need to add event listeners so that when image is clicked it plays the video on the display side.&#10;&#10;Also need to do all the CSS for how they look on both control and display side." />
   </component>
 </project>

@@ -109,3 +109,44 @@ h1{
 }
 
 /* Clips */
+#clips{
+    display: block-flex;
+}
+
+.clip {
+    display: inline-block;
+	margin: 2rem;
+	width: 25rem;
+	height: 40rem;
+}
+
+.image_container {
+    width: 25rem;
+	height: 25rem;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:
+}
+
+.image_container img {
+    max-height: 90%;
+    max-width: 90%;
+}
+
+.name {
+	font-size: 2rem;
+	color: #de0c0c;
+}
+
+.description {
+	font-size: 1.5rem;
+	color: #e40b0b;
+}
+
+.info {
+	color:red;
+}
+
+

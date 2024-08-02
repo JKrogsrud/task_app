@@ -171,6 +171,9 @@ def display_scores(scores):
     print(score_hist.get_score_history())
     socketio.emit('show_scores', score_hist.get_score_history())
 
+@socketio.on('play_clip')
+def play_clip(loc):
+    socketio.emit('play_clip', loc)
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

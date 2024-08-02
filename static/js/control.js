@@ -146,11 +146,11 @@ socket.on('setup', function(setup_bundle) {
            score_delta.textContent = parseInt(score_delta.textContent) + 1;
         });
 
-        // Append score pieces to their span
+        // Append score pieces to their div
         score_display.appendChild(current_score);
         score_display.appendChild(score_delta);
 
-        // Append the buttons and displays to their span
+        // Append the buttons and displays to their div
         button_span.appendChild(negative_button);
         button_span.appendChild(score_display);
         button_span.appendChild(positive_button);
@@ -182,8 +182,12 @@ socket.on('setup', function(setup_bundle) {
         clip_div.classList.add("clip");
 
         // add image_still
+        const image_container_div = document.createElement('div');
+        image_container_div.classList.add("image_container");
         var clip_image = document.createElement('img');
         clip_image.src = './static/assets/images/clips/' + still;
+
+        image_container_div.appendChild(clip_image);
 
         // Add name of clip
         const name_div = document.createElement("div");
@@ -200,19 +204,21 @@ socket.on('setup', function(setup_bundle) {
         info_div.classList.add("info");
         info_div.textContent = info;
 
-        clip_div.appendChild(clip_image);
+        clip_div.appendChild(image_container_div);
         clip_div.appendChild(name_div);
         clip_div.appendChild(description_div);
         clip_div.appendChild(info_div);
 
+        // Add event listeners for clicking image to start video
+        image_container_div.addEventListener("click", function() {
+            // what video do we play?
+            socket.emit('play_clip', loc);
+        });
+
         clips_container.appendChild(clip_div);
-
-        // Add event listeners for clicking image
-
     });
 
-
-
+    console.log("clips page setup");
 });
 
 // Update local scores

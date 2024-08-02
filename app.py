@@ -162,7 +162,7 @@ def display_scores(scores):
     # send info to display to show the new score
     print("sending scores to diplay:")
     print(score_hist.get_score_history())
-    socketio.emit('show_score_animation', score_hist.get_score_history())
+    socketio.emit('show_scores', score_hist.get_score_history())
     ## recall this should look like:
     ## [{player:score}]
 

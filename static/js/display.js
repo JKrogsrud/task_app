@@ -70,7 +70,7 @@ socket.on('show_scores', function(score_bundle) {
 
         let player_image_location = sessionStorage.getItem(player_name);
         var player_image = document.createElement('img');
-        player_image.src = './static/assets/images/players' + player_image_location;
+        player_image.src = './static/assets/images/players/' + player_image_location;
 
         var current_score = document.createElement('p');
         current_score.classList.add('current_score');

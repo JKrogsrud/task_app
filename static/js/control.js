@@ -84,7 +84,7 @@ socket.on('connect', function() {
     socket.emit('connected', 'controller');
 });
 
-// SCORES
+// SETUP WHOLE PAGE
 socket.on('setup', function(setup_bundle) {
 
     // Sanity Check
@@ -219,6 +219,19 @@ socket.on('setup', function(setup_bundle) {
     });
 
     console.log("clips page setup");
+
+    // FULLTASKS
+    fulltasks = setup_bundle['fulltasks']
+
+    fulltasks.forEach((task) => {
+        // organize info so it's readable
+
+    });
+
+    var fulltasks_div = document.getElementById('full_tasks');
+
+    for
+
 });
 
 // Update local scores

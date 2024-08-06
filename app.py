@@ -124,7 +124,20 @@ def handle_connection(connection_type):
                           'description': clip_description,
                           'info': clip_info})
 
-        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': 'tmp', 'clips': clips}
+        # Setup for fulltasks
+        env_fulltasks = dotenv_values('fulltask.env')
+        fulltasks = []
+        for task in env_fulltasks:
+            task_name, vid_id, img_loc, contestant_tuple, note_tuple = env_fulltasks[task].split("^^")
+            fulltasks.append({'task_name': task_name,
+                              'vid_id': vid_id,
+                              'img_loc': img_loc,
+                              'contestant_tuple': contestant_tuple,
+                              'note_tuple': note_tuple
+                              })
+
+
+        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': fulltasks, 'clips': clips}
         socketio.emit('setup', setup_bundle, to='controller')
 
     else:

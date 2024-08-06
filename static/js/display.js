@@ -106,6 +106,4 @@ socket.on('play_clip', function(loc) {
     vid.appendChild(source);
     body.appendChild(vid);
 
-
-
 });

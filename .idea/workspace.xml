@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Added CSS to clips on control side. eventlisteners working as expected and playing video clips">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Debugged images not showing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,11 +305,18 @@
       <option name="project" value="LOCAL" />
       <updated>1722629215406</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Debugged images not showing">
+      <option name="closed" value="true" />
+      <created>1722788563852</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1722788563853</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doesn't appear to have pushed" />
     <MESSAGE value="Created the Scores class&#10;Implementing dotenv for loading players" />
     <MESSAGE value="Adding CSS to make the control window." />
     <MESSAGE value="Added a background, working on navbar which will update the control in-place" />
@@ -330,6 +341,7 @@
     <MESSAGE value="baseline working without animation" />
     <MESSAGE value="Clips initially setup. Need to add event listeners so that when image is clicked it plays the video on the display side.&#10;&#10;Also need to do all the CSS for how they look on both control and display side." />
     <MESSAGE value="Added CSS to clips on control side. eventlisteners working as expected and playing video clips" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CSS to clips on control side. eventlisteners working as expected and playing video clips" />
+    <MESSAGE value="Debugged images not showing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged images not showing" />
   </component>
 </project>

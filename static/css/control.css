@@ -120,7 +120,7 @@ h1{
 	height: 40rem;
 }
 
-.image_container {
+#clips .image_container {
     width: 25rem;
 	height: 25rem;
 	background-color: black;
@@ -130,23 +130,59 @@ h1{
 	border:
 }
 
-.image_container img {
+#clips .image_container img {
     max-height: 90%;
     max-width: 90%;
 }
 
-.name {
+#clips .name {
 	font-size: 2rem;
 	color: #de0c0c;
 }
 
-.description {
+#clips .description {
 	font-size: 1.5rem;
 	color: #e40b0b;
 }
 
-.info {
+#clips .info {
 	color:red;
 }
+
+/* Fulltasks */
+
+#fulltasks {
+    display: block-flex;
+}
+
+#fulltasks .task {
+
+}
+
+#fulltasks .image_container {
+
+}
+
+#fulltasks .image {
+
+}
+
+#fulltasks .image_container .play_button {
+
+}
+
+#fulltasks .image_container .pause_button {
+
+}
+
+#fulltasks .contestants {
+
+}
+
+#fulltasks .notes {
+
+}
+
+
 
 

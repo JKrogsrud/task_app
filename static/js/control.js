@@ -221,16 +221,73 @@ socket.on('setup', function(setup_bundle) {
     console.log("clips page setup");
 
     // FULLTASKS
+    var fulltasks_div = document.getElementById('full_tasks');
     fulltasks = setup_bundle['fulltasks']
 
     fulltasks.forEach((task) => {
         // organize info so it's readable
+        let task_name = task['task_name'];
+        let vid_id = task['vid_id'];
+        let img_loc = task['img_loc'];
+        let contestant_array = task['contestant_tuple'].split(',');
+        let note_array = task['note_tuple'].split(',');
+
+        // create a div for the new video
+        const task_div = document.createElement('div');
+        task_div.classList.add('task');
+        task_div.id = vid_id;
+
+        // image_container, image, play/pause buttons
+        const image_container = document.createElement('div');
+        image_container.classList.add('image_container');
+
+        // within container we put the image
+        const image  = document.createElement('img');
+        image.src = './static/assets/images/full_tasks/' + img_loc;
+        image_container.appendChild(image);
+
+        // play / pause button
+        // Unlike the name suggest this is still just a image
+        const play_button = document.createElement('img');
+        play_button.src = './static/assets/images/full_tasks/play_button.png';
+
+        image_container.appendChild(play_button);
+
+        // We will make and overlay a pause button but keep it hidden
+        const pause_button = document.createElement('img');
+        pause_button.src = './static/assets/images/full_tasks/pause_button.png';
+        pause_button.hidden = true;
+
+        // Add event listeners to both that switches visibility and emits video controls
+        play_button.addEventListener("click", () => {
+            // Switch visibility
+            play_button.hidden = true;
+            // emit message to backend
+            socket.emit('play_fulltask', vid_id);
+            // Switch visibility to pause
+            pause_button.hidden = false;
+        });
+
+        pause_button.addEventListener("click", () => {
+            // Switch visibility
+            pause_button.hidden = true;
+            // emit message to backend
+            socket.emit('play_fulltask', vid_id);
+            // Switch visibility to pause
+            play_button.hidden = false;
+        });
+
+        image_container.appendChild(play_button);
+        image_container.appendChild(pause_button);
+
+        // Add imagine container to the fulltasks_div
+        fulltasks_div.appendChild(image_container);
+
+        // Task Name
+        task_name_p = document.createElement('p');
+
 
     });
-
-    var fulltasks_div = document.getElementById('full_tasks');
-
-    for
 
 });
 

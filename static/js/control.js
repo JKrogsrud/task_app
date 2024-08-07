@@ -285,7 +285,13 @@ socket.on('setup', function(setup_bundle) {
 
         // Task Name
         task_name_p = document.createElement('p');
+        task_name_p.classList.add("task_name");
+        task_name_p.textContent = task_name;
 
+        fulltasks_div.appendChild(task_name_p);
+
+        // Contestants in clip
+        // This should be a comma separated list
 
     });
 

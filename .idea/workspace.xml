@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="making buttons for pause and play. Not yet complete or tested.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,11 +323,26 @@
       <option name="project" value="LOCAL" />
       <updated>1722962236097</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="making buttons for pause and play. Not yet complete or tested.">
+      <option name="closed" value="true" />
+      <created>1722983887031</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1722983887031</updated>
+    </task>
+    <task id="LOCAL-00029" summary="making buttons for pause and play. Not yet complete or tested.">
+      <option name="closed" value="true" />
+      <created>1722993974042</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993974042</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding CSS to make the control window." />
     <MESSAGE value="Added a background, working on navbar which will update the control in-place" />
     <MESSAGE value="Working on CSS to make navbar" />
     <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
@@ -347,6 +367,7 @@
     <MESSAGE value="Added CSS to clips on control side. eventlisteners working as expected and playing video clips" />
     <MESSAGE value="Debugged images not showing" />
     <MESSAGE value="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js" />
+    <MESSAGE value="making buttons for pause and play. Not yet complete or tested." />
+    <option name="LAST_COMMIT_MESSAGE" value="making buttons for pause and play. Not yet complete or tested." />
   </component>
 </project>

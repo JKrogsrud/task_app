@@ -12,7 +12,7 @@ function toggle_view(toggle_to) {
         scores_div.hidden = false;
         fulltasks_div.hidden = true;
         clips_div.hidden = true;
-    } else if (toggle_to == 'fulltasks') {
+    } else if (toggle_to == 'full_tasks') {
         scores_div.hidden = true;
         fulltasks_div.hidden = false;
         clips_div.hidden = true;
@@ -230,6 +230,9 @@ socket.on('setup', function(setup_bundle) {
         let vid_id = task['vid_id'];
         let img_loc = task['img_loc'];
         let contestant_array = task['contestant_tuple'].split(',');
+
+        let description = task['description'];
+
         let note_array = task['note_tuple'].split(',');
 
         // create a div for the new video
@@ -244,17 +247,20 @@ socket.on('setup', function(setup_bundle) {
         // within container we put the image
         const image  = document.createElement('img');
         image.src = './static/assets/images/full_tasks/' + img_loc;
+        image.classList.add('task_image');
         image_container.appendChild(image);
 
         // play / pause button
         // Unlike the name suggest this is still just a image
         const play_button = document.createElement('img');
+        play_button.classList.add('play_button');
         play_button.src = './static/assets/images/full_tasks/play_button.png';
 
         image_container.appendChild(play_button);
 
         // We will make and overlay a pause button but keep it hidden
         const pause_button = document.createElement('img');
+        pause_button.classList.add('pause_button');
         pause_button.src = './static/assets/images/full_tasks/pause_button.png';
         pause_button.hidden = true;
 
@@ -272,7 +278,7 @@ socket.on('setup', function(setup_bundle) {
             // Switch visibility
             pause_button.hidden = true;
             // emit message to backend
-            socket.emit('play_fulltask', vid_id);
+            socket.emit('pause', vid_id);
             // Switch visibility to pause
             play_button.hidden = false;
         });
@@ -281,17 +287,66 @@ socket.on('setup', function(setup_bundle) {
         image_container.appendChild(pause_button);
 
         // Add imagine container to the fulltasks_div
-        fulltasks_div.appendChild(image_container);
+        task_div.appendChild(image_container);
 
         // Task Name
-        task_name_p = document.createElement('p');
+        const task_name_p = document.createElement('p');
         task_name_p.classList.add("task_name");
         task_name_p.textContent = task_name;
 
-        fulltasks_div.appendChild(task_name_p);
+        task_div.appendChild(task_name_p);
+
+        task_name_p.addEventListener("mouseenter", (event) => {
+            event.target.style.color = 'white';
+        }, false);
+
+        task_name_p.addEventListener("mouseleave", (event) => {
+            event.target.style.color = '';
+        });
+
+        task_name_p.addEventListener("click", () => {
+            // When clicked we should hide the current 'p_div'
+            // create a new text_field and two buttons
+            // the buttons are for committing or discarding changes
+        });
 
         // Contestants in clip
         // This should be a comma separated list
+        let contestant_text = '';
+        for (var i = 0; i < contestant_array.length; i++) {
+            contestant_text = contestant_text + contestant_array[i] + ', ';
+        };
+
+        // remove the last comma
+        contestant_text = contestant_text.slice(0, -2);
+
+        const contestant_p = document.createElement('p');
+        contestant_p.classList.add('contestants');
+        contestant_p.textContent = contestant_text;
+
+        task_div.appendChild(contestant_p);
+
+        // Description
+        const description_div = document.createElement('p');
+        description_div.classList.add('description');
+        description_div.textContent = description;
+
+        task_div.appendChild(description_div);
+
+        // Add Notes
+        let bulleted_notes = document.createElement('ul');
+        bulleted_notes.classList.add('all_notes');
+        for (var i = 0; i < note_array.length; i++) {
+            // Each note will be part of a bulleted list
+            let note_text = note_array[i];
+            const note_li = document.createElement('li');
+            note_li.textContent = note_text;
+            bulleted_notes.appendChild(note_li);
+        };
+
+        task_div.appendChild(bulleted_notes);
+
+        fulltasks_div.appendChild(task_div);
 
     });
 

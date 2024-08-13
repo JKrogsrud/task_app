@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_socketio import SocketIO, join_room
 import shelve
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv, dotenv_values, set_key
 
 app = Flask(__name__)
 
@@ -59,6 +59,47 @@ class Scores:
                             {'image': player.img, 'current_score': player.current_score}
                         for player in self.players}
         return score_bundle
+
+# Update Environment
+def update_env(env_path, line_id, key_to_set, value_to_set):
+    # my environment looks like
+    if env_path == 'fulltask.env':
+        # first load the environment that we need to change to get
+        env_file = dotenv_values(env_path)
+        line_to_change = env_file[line_id]
+
+        task_name, vid_id, img_loc, contestant_tuple, description, note_tuple = line_to_change.split("^^")
+
+        match key_to_set:
+            case 'task_name':
+                task_name = value_to_set
+            case 'vid_id':
+                vid_id = value_to_set
+            case 'img_loc':
+                img_loc = value_to_set
+            case 'contestant_tuple':
+                contestant_tuple = value_to_set
+            case 'description':
+                # primary reason for this function but left a lot of room
+                description = value_to_set
+            case 'note_tuple':
+                note_tuple = value_to_set
+            case _:
+                print('No such key exists. try one of the following keys:')
+                keys = ['task_name', 'vid_id', 'img_loc', 'contestant_tuple', 'description', 'note_tuple']
+                print(keys)
+
+        # we rebuild the string here
+        rebuilt_str = task_name + '^^' + vid_id + '^^' + img_loc + '^^' + contestant_tuple + '^^' + description + '^^' + note_tuple
+        set_key(env_path, key_to_set=line_id, value_to_set=rebuilt_str)
+
+    elif env_path == 'clip_info.env':
+        pass
+    elif env_path == 'player_info.env':
+        pass
+    else:
+        print('Incorrect path stated. No .env file known by that name.')
+
 
 @app.route("/")
 def index():
@@ -128,14 +169,15 @@ def handle_connection(connection_type):
         env_fulltasks = dotenv_values('fulltask.env')
         fulltasks = []
         for task in env_fulltasks:
-            task_name, vid_id, img_loc, contestant_tuple, note_tuple = env_fulltasks[task].split("^^")
+            task_name, vid_id, img_loc, contestant_tuple, description, note_tuple = env_fulltasks[task].split("^^")
+
             fulltasks.append({'task_name': task_name,
                               'vid_id': vid_id,
                               'img_loc': img_loc,
                               'contestant_tuple': contestant_tuple,
+                              'description': description,
                               'note_tuple': note_tuple
                               })
-
 
         setup_bundle = {'scores': scores.get_dict(), 'fulltasks': fulltasks, 'clips': clips}
         socketio.emit('setup', setup_bundle, to='controller')
@@ -166,6 +208,7 @@ def reset():
     d.close()
 
     socketio.emit('reset', to='display')
+
 # Control -> Display
 @socketio.on('display_scores')
 def display_scores(scores):
@@ -186,7 +229,15 @@ def display_scores(scores):
 
 @socketio.on('play_clip')
 def play_clip(loc):
-    socketio.emit('play_clip', loc)
+    socketio.emit('play_clip', loc, to='display')
+
+@socketio.on('play_fulltask')
+def play_fulltask(vid_id):
+    socketio.emit('play_fulltask', vid_id, to='display')
+
+@socketio.on('pause')
+def pause_fulltask(vid_id):
+    socketio.emit('pause', vid_id, to='display')
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

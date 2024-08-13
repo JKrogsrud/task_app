@@ -151,38 +151,69 @@ h1{
 
 /* Fulltasks */
 
-#fulltasks {
+#full_tasks {
     display: block-flex;
 }
 
-#fulltasks .task {
+#full_tasks .task {
+	display: inline-block;
+	margin: 2rem;
+}
+
+#full_tasks .image_container {
+	width: 25rem;
+	height: 25rem;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:
+}
+
+#full_tasks .task_image {
+	position: relative;
+	left: 3rem;
+	max-height: 90%;
+    max-width: 90%;
+}
+
+#full_tasks .image_container .play_button {
+	position: relative;
+	left: -10rem;
+}
+
+#full_tasks .image_container .pause_button {
+	position: relative;
+	left: -10rem
+}
+
+#full_tasks .task_name {
+	font-size: 2rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .contestants {
+	font-size: 1.5rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .description {
+    font-size: 1.5rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .all_notes {
+	width: 25rem;
 
 }
 
-#fulltasks .image_container {
-
+#full_tasks .all_notes li {
+	font-size: 1.5rem;
+	color:#e40000;
 }
-
-#fulltasks .image {
-
-}
-
-#fulltasks .image_container .play_button {
-
-}
-
-#fulltasks .image_container .pause_button {
-
-}
-
-#fulltasks .contestants {
-
-}
-
-#fulltasks .notes {
-
-}
-
 
 
 

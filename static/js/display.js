@@ -98,6 +98,7 @@ socket.on('play_clip', function(loc) {
 
     // create a new multimedia div
     let vid = document.createElement('video');
+    vid.classList.add('clip')
     vid.autoplay = true;
     let source = document.createElement('source');
     source.src = './static/assets/videos/clips/' + loc;
@@ -106,4 +107,36 @@ socket.on('play_clip', function(loc) {
     vid.appendChild(source);
     body.appendChild(vid);
 
+});
+
+// Fulltask
+
+socket.on('play_fulltask', function(vid_id) {
+    // Check if the current video is the current video
+    if (body.firstChild.id == vid_id) {
+        // We should just remind it to continue playing
+        body.firstChild.play();
+    } else {
+        // In this case we should clear the display and setup the video to play
+        while (body.firstChild) {
+            body.removeChild(body.firstChild);
+        };
+
+        // Otherwise setup the video and hit play
+        let vid = document.createElement('video');
+        vid.classList.add('fulltask');
+        vid.id = vid_id;
+        vid.autoplay = true;
+        let source = document.createElement('source');
+        source.src = './static/assets/videos/full_tasks/' + vid_id;
+        source.type = 'video/mp4';
+
+        vid.appendChild(source);
+        body.appendChild(vid);
+    };
+});
+
+socket.on('pause', function(vid_id) {
+    // Here we just need to pause the playing video
+    body.firstChild.pause();
 });

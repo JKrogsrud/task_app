@@ -239,6 +239,10 @@ def play_fulltask(vid_id):
 def pause_fulltask(vid_id):
     socketio.emit('pause', vid_id, to='display')
 
+@socketio.on('update_environment')
+def update_environment(update_info):
+    print(update_info)
+
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'
     socketio.run(app)

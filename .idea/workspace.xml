@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="making buttons for pause and play. Not yet complete or tested.">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,11 +335,18 @@
       <option name="project" value="LOCAL" />
       <updated>1722993974042</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary.">
+      <option name="closed" value="true" />
+      <created>1723573155372</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1723573155372</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a background, working on navbar which will update the control in-place" />
     <MESSAGE value="Working on CSS to make navbar" />
     <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
     <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
@@ -368,6 +371,7 @@
     <MESSAGE value="Debugged images not showing" />
     <MESSAGE value="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js" />
     <MESSAGE value="making buttons for pause and play. Not yet complete or tested." />
-    <option name="LAST_COMMIT_MESSAGE" value="making buttons for pause and play. Not yet complete or tested." />
+    <MESSAGE value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
   </component>
 </project>

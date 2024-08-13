@@ -164,6 +164,68 @@ socket.on('setup', function(setup_bundle) {
     });
     console.log("Scores page setup");
 
+    function makeEditable(element_to_be_editable, env_path, vid_id, key_to_set) {
+        // Mouse over color change
+        element_to_be_editable.addEventListener("mouseenter", (event) => {
+            event.target.style.color = 'white';
+        }, false);
+        // Mouse leave color change
+        element_to_be_editable.addEventListener("mouseleave", (event) => {
+            event.target.style.color = ''; // Taken over by CSS
+        }, false);
+
+        // When clicked
+        element_to_be_editable.addEventListener("click", () => {
+            element_to_be_editable.hidden = true;
+
+            // Container
+            form_and_buttons = document.createElement('div');
+
+            // create input field and button
+            input_field = document.createElement('input');
+            input_field.type = 'text';
+            input_field.value = element_to_be_editable.textContent;
+
+            // create two buttons
+            // btn 1 commits changes done
+            commit_btn = document.createElement('button');
+            commit_btn.classList.add('commit');
+            commit_btn.textContent = 'Commit';
+            commit_btn.addEventListener('click', () => {
+                // Change the task_name_p
+                element_to_be_editable.textContent = input_field.value;
+                element_to_be_editable.hidden = false;
+
+                // Better way to pull this info?
+                update_info = {'env_path': env_path, 'line_id': vid_id, 'key_to_set': key_to_set, 'value_to_set': input_field.textContent}
+                socket.emit('update_environment', update_info);
+
+                // remove field and buttons
+                form_and_buttons.parentNode.removeChild(form_and_buttons);
+            });
+
+            // btn 2 cancels all changes
+            cancel_btn = document.createElement('button');
+            cancel_btn.classList.add('cancel');
+            cancel_btn.textContent = 'Cancel';
+            cancel_btn.addEventListener('click', () => {
+                task_name_p.hidden = false;
+                form_and_buttons.parentNode.removeChild(form_and_buttons);
+            });
+
+            btn_div = document.createElement('div');
+            btn_div.classList.add('buttons');
+
+            btn_div.appendChild(commit_btn);
+            btn_div.appendChild(cancel_btn);
+
+            form_and_buttons.appendChild(input_field);
+            form_and_buttons.appendChild(btn_div);
+
+            element_to_be_editable.parentNode.appendChild(form_and_buttons);
+        });
+    };
+
     // CLIPS
     clips = setup_bundle['clips'];
 
@@ -291,24 +353,71 @@ socket.on('setup', function(setup_bundle) {
 
         // Task Name
         const task_name_p = document.createElement('p');
+        // Container <- needed for placing the editable fields in same space
+        const task_name_p_container = document.createElement('div');
+        task_name_p_container.appendChild(task_name_p)
+
         task_name_p.classList.add("task_name");
         task_name_p.textContent = task_name;
 
-        task_div.appendChild(task_name_p);
+        task_div.appendChild(task_name_p_container);
 
-        task_name_p.addEventListener("mouseenter", (event) => {
-            event.target.style.color = 'white';
-        }, false);
+        makeEditable(task_name_p, 'fulltask.env', vid_id, 'task_name');
 
-        task_name_p.addEventListener("mouseleave", (event) => {
-            event.target.style.color = '';
-        });
-
-        task_name_p.addEventListener("click", () => {
-            // When clicked we should hide the current 'p_div'
-            // create a new text_field and two buttons
-            // the buttons are for committing or discarding changes
-        });
+//        task_name_p.addEventListener("mouseenter", (event) => {
+//            event.target.style.color = 'white';
+//        }, false);
+//
+//        task_name_p.addEventListener("mouseleave", (event) => {
+//            event.target.style.color = '';
+//        });
+//
+//        task_name_p.addEventListener("click", () => {
+//            // When clicked we should hide the current 'p_div'
+//            task_name_p.hidden = true;
+//
+//            // create a new form
+//            form_and_buttons = document.createElement('div');
+//
+//            input_field = document.createElement('input');
+//            input_field.type = 'text';
+//            input_field.value = task_name_p.textContent;
+//
+//            // create two buttons
+//            // btn 1 commits changes done
+//            commit_btn = document.createElement('button');
+//            commit_btn.classList.add('commit');
+//            commit_btn.textContent = 'Commit';
+//            commit_btn.addEventListener('click', () => {
+//                // Change the task_name_p
+//                task_name_p.textContent = input_field.value;
+//                task_name_p.hidden = false;
+//                // update backend
+//                update_info = {'env_path': 'fulltask.env', 'line_id': vid_id, 'key_to_set': 'task_name', 'value_to_set': input_field.textContent}
+//                socket.emit('update_environment', update_info);
+//                // remove field and buttons
+//                form_and_buttons.parentNode.removeChild(form_and_buttons);
+//            });
+//            // btn 2 cancels all changes
+//            cancel_btn = document.createElement('button');
+//            cancel_btn.classList.add('cancel');
+//            cancel_btn.textContent = 'Cancel';
+//            cancel_btn.addEventListener('click', () => {
+//                task_name_p.hidden = false;
+//                form_and_buttons.parentNode.removeChild(form_and_buttons);
+//            });
+//
+//            btn_div = document.createElement('div');
+//            btn_div.classList.add('buttons');
+//
+//            btn_div.appendChild(commit_btn);
+//            btn_div.appendChild(cancel_btn);
+//
+//            form_and_buttons.appendChild(input_field);
+//            form_and_buttons.appendChild(btn_div);
+//
+//            task_name_p_container.appendChild(form_and_buttons);
+//        });
 
         // Contestants in clip
         // This should be a comma separated list

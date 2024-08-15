@@ -94,7 +94,28 @@ def update_env(env_path, line_id, key_to_set, value_to_set):
         set_key(env_path, key_to_set=line_id, value_to_set=rebuilt_str)
 
     elif env_path == 'clip_info.env':
-        pass
+        env_file = dotenv_values(env_path)
+        line_to_change = env_file[line_id]
+
+        name, still, loc, description, info = line_to_change.split("^^")
+
+        match key_to_set:
+            case 'name':
+                name = value_to_set
+            case 'still':
+                still = value_to_set
+            case 'loc':
+                loc = value_to_set
+            case 'description':
+                description = value_to_set
+            case 'info':
+                info = value_to_set
+            case _:
+                print('No such key exists.')
+
+        rebuilt_str = name + '^^' + still + '^^' + loc + '^^' + description + '^^' + info
+        set_key(env_path, key_to_set=line_id, value_to_set=rebuilt_str)
+
     elif env_path == 'player_info.env':
         pass
     else:

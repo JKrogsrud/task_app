@@ -256,20 +256,35 @@ socket.on('setup', function(setup_bundle) {
         name_div.classList.add("name");
         name_div.textContent = name;
 
+        const name_div_container = document.createElement("div");
+        name_div_container.appendChild(name_div);
+
+        makeEditable(name_div, 'clip_info.env', loc, 'name');
+
         // Description
         const description_div = document.createElement("p");
         description_div.classList.add("description");
         description_div.textContent = description;
+
+        const description_div_container = document.createElement("div");
+        description_div_container.appendChild(description_div);
+
+        makeEditable(description_div, 'clip_info.env', loc, 'description');
 
         // Info
         const info_div = document.createElement("p");
         info_div.classList.add("info");
         info_div.textContent = info;
 
+        const info_div_container = document.createElement("div");
+        info_div_container.appendChild(info_div);
+
+        makeEditable(info_div, 'clip_info.env', loc, 'info');
+
         clip_div.appendChild(image_container_div);
-        clip_div.appendChild(name_div);
-        clip_div.appendChild(description_div);
-        clip_div.appendChild(info_div);
+        clip_div.appendChild(name_div_container);
+        clip_div.appendChild(description_div_container);
+        clip_div.appendChild(info_div_container);
 
         // Add event listeners for clicking image to start video
         image_container_div.addEventListener("click", function() {

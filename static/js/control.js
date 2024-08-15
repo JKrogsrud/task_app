@@ -197,7 +197,7 @@ socket.on('setup', function(setup_bundle) {
                 element_to_be_editable.hidden = false;
 
                 // Better way to pull this info?
-                update_info = {'env_path': env_path, 'line_id': vid_id, 'key_to_set': key_to_set, 'value_to_set': input_field.textContent}
+                update_info = {'env_path': env_path, 'line_id': vid_id, 'key_to_set': key_to_set, 'value_to_set': input_field.value}
                 socket.emit('update_environment', update_info);
 
                 // remove field and buttons
@@ -364,61 +364,6 @@ socket.on('setup', function(setup_bundle) {
 
         makeEditable(task_name_p, 'fulltask.env', vid_id, 'task_name');
 
-//        task_name_p.addEventListener("mouseenter", (event) => {
-//            event.target.style.color = 'white';
-//        }, false);
-//
-//        task_name_p.addEventListener("mouseleave", (event) => {
-//            event.target.style.color = '';
-//        });
-//
-//        task_name_p.addEventListener("click", () => {
-//            // When clicked we should hide the current 'p_div'
-//            task_name_p.hidden = true;
-//
-//            // create a new form
-//            form_and_buttons = document.createElement('div');
-//
-//            input_field = document.createElement('input');
-//            input_field.type = 'text';
-//            input_field.value = task_name_p.textContent;
-//
-//            // create two buttons
-//            // btn 1 commits changes done
-//            commit_btn = document.createElement('button');
-//            commit_btn.classList.add('commit');
-//            commit_btn.textContent = 'Commit';
-//            commit_btn.addEventListener('click', () => {
-//                // Change the task_name_p
-//                task_name_p.textContent = input_field.value;
-//                task_name_p.hidden = false;
-//                // update backend
-//                update_info = {'env_path': 'fulltask.env', 'line_id': vid_id, 'key_to_set': 'task_name', 'value_to_set': input_field.textContent}
-//                socket.emit('update_environment', update_info);
-//                // remove field and buttons
-//                form_and_buttons.parentNode.removeChild(form_and_buttons);
-//            });
-//            // btn 2 cancels all changes
-//            cancel_btn = document.createElement('button');
-//            cancel_btn.classList.add('cancel');
-//            cancel_btn.textContent = 'Cancel';
-//            cancel_btn.addEventListener('click', () => {
-//                task_name_p.hidden = false;
-//                form_and_buttons.parentNode.removeChild(form_and_buttons);
-//            });
-//
-//            btn_div = document.createElement('div');
-//            btn_div.classList.add('buttons');
-//
-//            btn_div.appendChild(commit_btn);
-//            btn_div.appendChild(cancel_btn);
-//
-//            form_and_buttons.appendChild(input_field);
-//            form_and_buttons.appendChild(btn_div);
-//
-//            task_name_p_container.appendChild(form_and_buttons);
-//        });
-
         // Contestants in clip
         // This should be a comma separated list
         let contestant_text = '';
@@ -440,7 +385,12 @@ socket.on('setup', function(setup_bundle) {
         description_div.classList.add('description');
         description_div.textContent = description;
 
-        task_div.appendChild(description_div);
+        const description_div_container = document.createElement('div');
+        description_div_container.appendChild(description_div);
+
+        task_div.appendChild(description_div_container);
+
+        makeEditable(description_div, 'fulltask.env', vid_id, 'description');
 
         // Add Notes
         let bulleted_notes = document.createElement('ul');

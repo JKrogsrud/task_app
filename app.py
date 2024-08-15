@@ -241,7 +241,7 @@ def pause_fulltask(vid_id):
 
 @socketio.on('update_environment')
 def update_environment(update_info):
-    print(update_info)
+    update_env(update_info['env_path'],update_info['line_id'],update_info['key_to_set'], update_info['value_to_set'])
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

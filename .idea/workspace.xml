@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary.">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Rollback to old branch as i hit ome issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
@@ -25,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="8b77ac511715b836966ccadaed9aebaa962a6218" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,16 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;baseline&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "ba725c04",
+    "last_opened_file_path": "C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images" />
@@ -345,11 +345,18 @@
       <option name="project" value="LOCAL" />
       <updated>1723573155372</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Rollback to old branch as i hit ome issue">
+      <option name="closed" value="true" />
+      <created>1723739471798</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1723739471798</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working on CSS to make navbar" />
     <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
     <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
     <MESSAGE value="Creating modules for player objects and score objects for better readability." />
@@ -374,6 +381,7 @@
     <MESSAGE value="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js" />
     <MESSAGE value="making buttons for pause and play. Not yet complete or tested." />
     <MESSAGE value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
+    <MESSAGE value="Rollback to old branch as i hit ome issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback to old branch as i hit ome issue" />
   </component>
 </project>

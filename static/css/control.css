@@ -85,3 +85,145 @@ h1{
 	width: 4.5rem;
 	height: 4.5rem;
 	background-color: #780712;
+
+.score_display{
+	display: inline-block;
+	height: 4rem;
+}
+
+.current_score, .score_delta{
+	display: inline-block;
+	font-size: 3rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.current_score {
+	background-color: aliceblue;
+}
+
+.score_delta {
+	background-color: cadetblue;
+}
+
+.scores_controls{
+	display: block;
+	clear:left;
+	margin-top: 4rem;
+}
+
+#commit_scores, #reset {
+	display: inline-block;
+}
+
+#commit_scores button, #reset button{
+	font-size: 3.5rem;
+	font-family: Typewriter;
+	background-color:#780712;
+}
+
+/* Clips */
+#clips{
+    display: block-flex;
+}
+
+.clip {
+    display: inline-block;
+	margin: 2rem;
+	width: 25rem;
+	height: 40rem;
+}
+
+#clips .image_container {
+    width: 25rem;
+	height: 25rem;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#clips .image_container img {
+    max-height: 90%;
+    max-width: 90%;
+}
+
+#clips .name {
+	font-size: 2rem;
+	color: #de0c0c;
+}
+
+#clips .description {
+	font-size: 1.5rem;
+	color: #e40b0b;
+}
+
+#clips .info {
+	color:red;
+}
+
+/* Fulltasks */
+
+#full_tasks {
+    display: block-flex;
+}
+
+#full_tasks .task {
+	display: inline-block;
+	margin: 2rem;
+}
+
+#full_tasks .image_container {
+	width: 25rem;
+	height: 25rem;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:
+}
+
+#full_tasks .task_image {
+	position: relative;
+	left: 3rem;
+	max-height: 90%;
+    max-width: 90%;
+}
+
+#full_tasks .image_container .play_button {
+	position: relative;
+	left: -10rem;
+}
+
+#full_tasks .image_container .pause_button {
+	position: relative;
+	left: -10rem
+}
+
+#full_tasks .task_name {
+	font-size: 2rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .contestants {
+	font-size: 1.5rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .description {
+    font-size: 1.5rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
+#full_tasks .all_notes {
+	width: 25rem;
+
+}
+
+#full_tasks .all_notes li {
+	font-size: 1.5rem;
+	color:#e40000;
+}

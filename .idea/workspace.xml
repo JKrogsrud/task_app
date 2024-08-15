@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary.">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Created a function to make various html elements editable within the browser and thus make our lives easier when we start making scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -343,11 +344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1723573155372</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Created a function to make various html elements editable within the browser and thus make our lives easier when we start making scripts">
+      <option name="closed" value="true" />
+      <created>1723579753804</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1723579753805</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working on CSS to make navbar" />
     <MESSAGE value="Changing tabs will be controlled by keeping elements hidden as rendering templates was being mean while another template was already rendered." />
     <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
     <MESSAGE value="Creating modules for player objects and score objects for better readability." />
@@ -372,6 +380,7 @@
     <MESSAGE value="fulltasks section being worked on: environment variables, app.py sending setup bundle.&#10;&#10;Currently working on control.js" />
     <MESSAGE value="making buttons for pause and play. Not yet complete or tested." />
     <MESSAGE value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
+    <MESSAGE value="Created a function to make various html elements editable within the browser and thus make our lives easier when we start making scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a function to make various html elements editable within the browser and thus make our lives easier when we start making scripts" />
   </component>
 </project>

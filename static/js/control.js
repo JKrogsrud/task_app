@@ -182,8 +182,8 @@ socket.on('setup', function(setup_bundle) {
             form_and_buttons = document.createElement('div');
 
             // create input field and button
-            input_field = document.createElement('input');
-            input_field.type = 'text';
+            input_field = document.createElement('textarea');
+            input_field.classList.add('edit');
             input_field.value = element_to_be_editable.textContent;
 
             // create two buttons

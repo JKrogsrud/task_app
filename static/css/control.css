@@ -39,6 +39,19 @@ h1{
 	color: #430606;
 }
 
+.edit {
+	font-family: Typewriter;
+	font-size: 2rem;
+	width: 24.5rem;
+	height: 4rem;
+}
+
+.commit, .cancel {
+	background-color: white;
+	font-family: Typewriter;
+	font-size: 3rem;
+}
+
 /* Scores */
 
 #scores{

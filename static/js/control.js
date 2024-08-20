@@ -409,8 +409,9 @@ socket.on('setup', function(setup_bundle) {
         makeEditable(description_div, 'fulltask.env', vid_id, 'description');
 
         // Add Notes
-//
-//        let note_controls = document.createElement('div');
+
+        let note_div = document.createElement('div');
+
         let bulleted_notes = document.createElement('ul');
         bulleted_notes.classList.add('all_notes');
         for (var i = 0; i < note_array.length; i++) {
@@ -427,7 +428,45 @@ socket.on('setup', function(setup_bundle) {
             makeEditable(note_li, 'fulltask.env', vid_id, 'note_tuple_' + i);
         };
 
-        task_div.appendChild(bulleted_notes);
+        let note_controls = document.createElement('div');
+
+        let add_note_button = document.createElement('button');
+        add_note_button.textContent = 'Add Note';
+        add_note_button.addEventListener("click", ()=> {
+            // We need to add a new blank note to the list of notes
+            const new_note = document.createElement('li');
+            new_note.textContent = 'new note';
+
+            const new_note_container = document.createElement('div');
+            new_note_container.appendChild(new_note);
+
+            // Get Length of current list
+            let index = bulleted_notes.children.length;
+            console.log(index);
+
+            bulleted_notes.appendChild(new_note);
+
+            makeEditable(new_note, 'fulltask.env', vid_id, 'note_tuple_' + index);
+
+        });
+
+        let delete_note_button = document.createElement('button');
+        delete_note_button.textContent = 'Delete Note';
+        delete_note_button.addEventListener("click", ()=> {
+            // This should probably get its own emit for simplicity
+            // First delete the last note from the html
+            bulleted_notes.removeChild(bulleted_notes.lastChild);
+
+            socket.emit('remove_note', vid_id);
+        });
+
+        note_controls.appendChild(add_note_button);
+        note_controls.appendChild(delete_note_button);
+
+        note_div.appendChild(bulleted_notes);
+        note_div.appendChild(note_controls);
+
+        task_div.appendChild(note_div);
 
         fulltasks_div.appendChild(task_div);
 

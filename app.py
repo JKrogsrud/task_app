@@ -90,8 +90,12 @@ def update_env(env_path, line_id, key_to_set, value_to_set):
             case 'note_tuple':
                 # We should receive a tuple here for value_to_set
                 note_list = note_tuple.split(',')
-                note_list[int(index)] = value_to_set
-                note_tuple = str(note_list)[1:-1]
+                if int(index) >= len(note_list):
+                    note_list.append(value_to_set)
+                else:
+                    note_list[int(index)] = value_to_set
+
+                note_tuple = ",".join(note_list)
             case _:
                 print('No such key exists.')
 
@@ -269,6 +273,21 @@ def pause_fulltask(vid_id):
 @socketio.on('update_environment')
 def update_environment(update_info):
     update_env(update_info['env_path'],update_info['line_id'],update_info['key_to_set'], update_info['value_to_set'])
+
+@socketio.on('remove_note')
+def remove_note(vid_id):
+    env_file = dotenv_values('fulltask.env')
+    line_to_change = env_file[vid_id]
+
+    task_name, vid_id, img_loc, contestant_tuple, description, note_tuple = line_to_change.split("^^")
+
+    note_list = note_tuple.split(',')
+    note_list = note_list[:-1]
+    note_tuple = ",".join(note_list)
+
+    # we rebuild the string here
+    rebuilt_str = task_name + '^^' + vid_id + '^^' + img_loc + '^^' + contestant_tuple + '^^' + description + '^^' + note_tuple
+    set_key('fulltask.env', key_to_set=vid_id, value_to_set=rebuilt_str)
 
 if __name__ == '__main__':
     # When using this do not use cmdline 'flask app run'

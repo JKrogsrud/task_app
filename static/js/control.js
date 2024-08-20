@@ -209,7 +209,8 @@ socket.on('setup', function(setup_bundle) {
             cancel_btn.classList.add('cancel');
             cancel_btn.textContent = 'Cancel';
             cancel_btn.addEventListener('click', () => {
-                task_name_p.hidden = false;
+                element_to_be_editable.hidden = false;
+                console.log('Cancel');
                 form_and_buttons.parentNode.removeChild(form_and_buttons);
             });
 
@@ -408,6 +409,8 @@ socket.on('setup', function(setup_bundle) {
         makeEditable(description_div, 'fulltask.env', vid_id, 'description');
 
         // Add Notes
+//
+//        let note_controls = document.createElement('div');
         let bulleted_notes = document.createElement('ul');
         bulleted_notes.classList.add('all_notes');
         for (var i = 0; i < note_array.length; i++) {
@@ -415,7 +418,13 @@ socket.on('setup', function(setup_bundle) {
             let note_text = note_array[i];
             const note_li = document.createElement('li');
             note_li.textContent = note_text;
+
+            const note_li_container = document.createElement('div');
+            note_li_container.appendChild(note_li);
+
             bulleted_notes.appendChild(note_li);
+
+            makeEditable(note_li, 'fulltask.env', vid_id, 'note_tuple_' + i);
         };
 
         task_div.appendChild(bulleted_notes);

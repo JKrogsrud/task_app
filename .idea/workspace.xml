@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Refixed decriptions editing">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="CSS for textareas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
@@ -39,16 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.app.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "new__main",
-    "last_opened_file_path": "C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new__main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images" />
@@ -361,12 +361,26 @@
       <option name="project" value="LOCAL" />
       <updated>1723740644639</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Back to baseline">
+      <option name="closed" value="true" />
+      <created>1723741946516</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1723741946516</updated>
+    </task>
+    <task id="LOCAL-00034" summary="CSS for textareas">
+      <option name="closed" value="true" />
+      <created>1723746581462</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1723746581462</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed functionality in js to a succinct toggle_view" />
-    <MESSAGE value="Creating modules for player objects and score objects for better readability." />
     <MESSAGE value="Restting how score data is setup, stored and sent on backend so I have something to work with on front end" />
     <MESSAGE value="Sending setup packet correctly, whoop" />
     <MESSAGE value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
@@ -390,6 +404,8 @@
     <MESSAGE value="Adding ability to change the .env files through interaction with the webpage. So far I've created a python function to help with those changes. added some mouseover events for task name as my first trial. I think I'll create a function that can takwe the info of a div and add the required event listeners as necessary." />
     <MESSAGE value="Rollback to old branch as i hit ome issue" />
     <MESSAGE value="Refixed decriptions editing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refixed decriptions editing" />
+    <MESSAGE value="Back to baseline" />
+    <MESSAGE value="CSS for textareas" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS for textareas" />
   </component>
 </project>

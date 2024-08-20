@@ -70,6 +70,11 @@ def update_env(env_path, line_id, key_to_set, value_to_set):
 
         task_name, vid_id, img_loc, contestant_tuple, description, note_tuple = line_to_change.split("^^")
 
+        # janky here but it gets it done
+        if key_to_set[:10] == 'note_tuple':
+            index = key_to_set[11:]
+            key_to_set = 'note_tuple'
+
         match key_to_set:
             case 'task_name':
                 task_name = value_to_set
@@ -83,11 +88,12 @@ def update_env(env_path, line_id, key_to_set, value_to_set):
                 # primary reason for this function but left a lot of room
                 description = value_to_set
             case 'note_tuple':
-                note_tuple = value_to_set
+                # We should receive a tuple here for value_to_set
+                note_list = note_tuple.split(',')
+                note_list[int(index)] = value_to_set
+                note_tuple = str(note_list)[1:-1]
             case _:
-                print('No such key exists. try one of the following keys:')
-                keys = ['task_name', 'vid_id', 'img_loc', 'contestant_tuple', 'description', 'note_tuple']
-                print(keys)
+                print('No such key exists.')
 
         # we rebuild the string here
         rebuilt_str = task_name + '^^' + vid_id + '^^' + img_loc + '^^' + contestant_tuple + '^^' + description + '^^' + note_tuple

@@ -136,6 +136,23 @@ socket.on('play_fulltask', function(vid_id) {
     };
 });
 
+// Images
+
+socket.on('show_image', function(img_id) {
+    // Clear the display area
+    while (body.firstChild) {
+        body.removeChild(body.firstChild);
+    };
+
+    let img_container = document.createElement('div');
+    let img = document.createElement('img');
+    img.classList.add('solitary_img');
+    img.src = './static/assets/images/solitary/' + img_id;
+    img_container.appendChild(img);
+
+    body.appendChild(img_container);
+});
+
 socket.on('pause', function(vid_id) {
     // Here we just need to pause the playing video
     body.firstChild.pause();

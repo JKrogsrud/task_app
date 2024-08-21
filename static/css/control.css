@@ -228,5 +228,31 @@ h1{
 	color:#e40000;
 }
 
+/* Images */
+
+#images {
+	display: block-flex;
+}
+
+#images .image {
+	display: inline-block;
+	margin: 2rem;
+}
+
+#images .image img {
+	width: 25rem;
+	height: 25rem;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#images .description {
+    font-size: 2.5rem;
+	width: 25rem;
+	color:#dc0303;
+}
+
 
 

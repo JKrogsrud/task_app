@@ -128,6 +128,17 @@ def update_env(env_path, line_id, key_to_set, value_to_set):
 
     elif env_path == 'player_info.env':
         pass
+    elif env_path == 'images.env':
+        env_file = dotenv_values(env_path)
+        line_to_change = env_file[line_id]
+
+        img_id, description = line_to_change.split("^^")
+
+        description = value_to_set
+
+        rebuilt_str = img_id + "^^" + description
+        set_key(env_path, key_to_set=line_id, value_to_set=rebuilt_str)
+
     else:
         print('Incorrect path stated. No .env file known by that name.')
 
@@ -210,7 +221,15 @@ def handle_connection(connection_type):
                               'note_tuple': note_tuple
                               })
 
-        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': fulltasks, 'clips': clips}
+        # setup for images
+        env_images = dotenv_values('images.env')
+        images = []
+        for image in env_images:
+            img_id, description = env_images[image].split("^^")
+            images.append({'img_id': img_id,
+                           'description': description})
+
+        setup_bundle = {'scores': scores.get_dict(), 'fulltasks': fulltasks, 'clips': clips, 'images': images}
         socketio.emit('setup', setup_bundle, to='controller')
 
     else:
@@ -265,6 +284,10 @@ def play_clip(loc):
 @socketio.on('play_fulltask')
 def play_fulltask(vid_id):
     socketio.emit('play_fulltask', vid_id, to='display')
+
+@socketio.on('show_image')
+def show_image(img_id):
+    socketio.emit('show_image', img_id, to='display')
 
 @socketio.on('pause')
 def pause_fulltask(vid_id):

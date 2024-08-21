@@ -7,19 +7,28 @@ function toggle_view(toggle_to) {
     var scores_div = document.getElementById('scores');
     var fulltasks_div = document.getElementById('full_tasks');
     var clips_div = document.getElementById('clips');
+    var images_div = document.getElementById('images');
 
     if (toggle_to == 'scores') {
         scores_div.hidden = false;
         fulltasks_div.hidden = true;
         clips_div.hidden = true;
+        images_div.hidden = true;
     } else if (toggle_to == 'full_tasks') {
         scores_div.hidden = true;
         fulltasks_div.hidden = false;
         clips_div.hidden = true;
+        images_div.hidden = true;
     } else if (toggle_to == 'clips') {
         scores_div.hidden = true;
         fulltasks_div.hidden = true;
         clips_div.hidden = false;
+        images_div.hidden = true;
+    } else if (toggle_to == 'images') {
+        scores_div.hidden = true;
+        fulltasks_div.hidden = true;
+        clips_div.hidden = true;
+        images_div.hidden = false;
     } else {
         console.log('well that is not expected');
     };
@@ -470,6 +479,48 @@ socket.on('setup', function(setup_bundle) {
 
         fulltasks_div.appendChild(task_div);
 
+    });
+
+    // Images
+    var images_div = document.getElementById('images');
+
+    let images = setup_bundle['images'];
+
+    images.forEach((image) => {
+        // organize
+        let img_id = image['img_id'];
+        let description = image['description'];
+
+        // Create a div for the whole image and description
+        const img_div = document.createElement('div');
+        img_div.classList.add('image');
+        img_div.id = img_id;
+
+        // Image proper
+        const img = document.createElement('img');
+        img.src = './static/assets/images/solitary/' + img_id;
+        img.classList.add('solitary_image');
+        img_div.appendChild(img);
+
+        // Clicking image should show it in Display
+        img.addEventListener("click", () =>{
+            // emit to back end to show on display
+            socket.emit('show_image', img_id);
+        });
+
+        // Description
+        const description_div = document.createElement('p');
+        description_div.classList.add('description');
+        description_div.textContent = description;
+
+        const description_div_container = document.createElement('div');
+        description_div_container.appendChild(description_div);
+
+        img_div.appendChild(description_div_container);
+
+        makeEditable(description_div, 'images.env', img_id, 'description');
+
+        images_div.appendChild(img_div);
     });
 
 });

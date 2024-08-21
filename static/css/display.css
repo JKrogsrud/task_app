@@ -33,3 +33,18 @@ body{
     font-family: Typewriter;
 }
 
+/* Images and Videos*/
+
+.solitary_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}

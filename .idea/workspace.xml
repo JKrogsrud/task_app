@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="CSS for textareas">
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Added ability to edit notes...in like the worst way possible but it works">
+      <change afterPath="$PROJECT_DIR$/images.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/Final_View.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/First_View.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/Zoom_out.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +54,12 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;new__main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images/solitary&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images\solitary" />
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -377,11 +386,26 @@
       <option name="project" value="LOCAL" />
       <updated>1723746581462</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added ability to edit notes...in like the worst way possible but it works">
+      <option name="closed" value="true" />
+      <created>1724168819622</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1724168819622</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added ability to edit notes...in like the worst way possible but it works">
+      <option name="closed" value="true" />
+      <created>1724176466654</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1724176466654</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Restting how score data is setup, stored and sent on backend so I have something to work with on front end" />
     <MESSAGE value="Sending setup packet correctly, whoop" />
     <MESSAGE value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
     <MESSAGE value="Added functionality to the - and + buttons" />
@@ -406,6 +430,7 @@
     <MESSAGE value="Refixed decriptions editing" />
     <MESSAGE value="Back to baseline" />
     <MESSAGE value="CSS for textareas" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS for textareas" />
+    <MESSAGE value="Added ability to edit notes...in like the worst way possible but it works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ability to edit notes...in like the worst way possible but it works" />
   </component>
 </project>

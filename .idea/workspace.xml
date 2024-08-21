@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Added ability to edit notes...in like the worst way possible but it works">
-      <change afterPath="$PROJECT_DIR$/images.env" afterDir="false" />
+    <list default="true" id="762374d3-0a98-44c7-8428-7638208078aa" name="Changes" comment="Added image tab and some css to center images and videos">
       <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/Final_View.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/First_View.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/images/solitary/Zoom_out.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/control.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/control.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/display.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/display.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images.env" beforeDir="false" afterPath="$PROJECT_DIR$/images.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -47,16 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;new__main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images/solitary&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
+    "Python.create_environment.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "new__main",
+    "last_opened_file_path": "C:/Users/jkrog/coding_projects/taskmaster_app/static/assets/images/solitary"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static\assets\images\solitary" />
@@ -67,7 +62,7 @@
       <recent name="C:\Users\jkrog\coding_projects\taskmaster_app\static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.create_environment">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="taskmaster_app" />
       <option name="ENV_FILES" value="" />
@@ -90,8 +85,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="create_environment" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="taskmaster_app" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_environment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.create_environment" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.app" />
@@ -402,11 +420,18 @@
       <option name="project" value="LOCAL" />
       <updated>1724176466654</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added image tab and some css to center images and videos">
+      <option name="closed" value="true" />
+      <created>1724260760202</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1724260760202</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sending setup packet correctly, whoop" />
     <MESSAGE value="Creating buttons for the scores input tab. Not finished need to add:&#10; - functionality and preloading with current scores (or 0)" />
     <MESSAGE value="Added functionality to the - and + buttons" />
     <MESSAGE value="updated send_scores function .. needs to be tested" />
@@ -431,6 +456,7 @@
     <MESSAGE value="Back to baseline" />
     <MESSAGE value="CSS for textareas" />
     <MESSAGE value="Added ability to edit notes...in like the worst way possible but it works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ability to edit notes...in like the worst way possible but it works" />
+    <MESSAGE value="Added image tab and some css to center images and videos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added image tab and some css to center images and videos" />
   </component>
 </project>
